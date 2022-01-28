@@ -1,24 +1,55 @@
-# README
+## materialsテーブル
+| Column                 | Type    | Options                           |
+| ---------------------- | ------- | --------------------------------- |
+| name                   | string  | null: false                       |
+| category_id            | integer  | null: false       
+|
+| price                  | integer |                        |
+| options                | string  | 
+|                 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### Association
+- has_one_attached :image
+- has_many :products, through: :product_materials
 
-Things you may want to cover:
 
-* Ruby version
+## productsテーブル
+| Column                 | Type       | Options                        |
+| ---------------------- | ---------- | ------------------------------ |
+| name                   | string     | null: false                    |
+| category_id            | integer | null: false 
+|
+| options             | string    |     
 
-* System dependencies
+### Association
+- has_one_attached :image
+- has_many :materials, through: :product_materials
+- has_many :orders, through: :order_products
 
-* Configuration
 
-* Database creation
+## product_materialsテーブル
+| Column                 | Type       | Options                        |
+| ---------------------- | ---------- | ------------------------------ |
+| product                    | references | null: false, foreign_key: true |
+| material                   | references | null: false, foreign_key: true |
+| single_quantity            | float    |                        |
 
-* Database initialization
+### Association
+- belongs_to :material
+- belongs_to :product
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## ordersテーブル
+| Column                 | Type       | Options                        |
+| ---------------------- | ---------- | ------------------------------ |
+| name                   | string       | null: false                    |
+| product_1                  | integer     | foreign_key: true        |
+| product_2                  | integer     | foreign_key: true        |
+| product_3                  | integer     |foreign_key: true        |
+| product_4                  | integer     | foregin_key: true        |
+| product_5                  | integer     | foregin_key: true        |
+| single_quantity            | float       |
+                         |
+                                                  
+### Association
+- has_many :products
