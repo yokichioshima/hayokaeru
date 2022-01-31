@@ -7,8 +7,12 @@
 
 <div class='main'>
   <%= form_with url: "/materials", method: :post, local: true do |form| %>
-    <%= form.text_field :name %>
-    <%= form.text_field :image %>
+    <%= form.text_field :name, class: 'form-material', placeholder: '食材名を入力してください' %>
+    <label class='form-image'>
+      <span class='image_file'>画像</span>
+      <%= form.text_field :image, class: 'hidden' %>
+    </label>
+    <%= form.%>
     <%= form.submit '登録' %>
   <% end %>
 </div>
