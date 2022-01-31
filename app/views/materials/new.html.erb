@@ -1,0 +1,14 @@
+<div class='header'>
+  <h1>食材登録</h1>
+  <div class='header_btns'>
+    <a href="/materials" class='header_btn'>食材一覧</a>
+  </div>
+</div>
+
+<div class='main'>
+  <%= form_with url: "/materials", method: :post, local: true do |form| %>
+    <%= form.text_field :name %>
+    <%= form.text_field :image %>
+    <%= form.submit '登録' %>
+  <% end %>
+</div>
