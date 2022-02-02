@@ -17,14 +17,14 @@
 | Column                 | Type       | Options                        |
 | ---------------------- | ---------- | ------------------------------ |
 | name                   | string     | null: false                    |
-| category_id            | integer | null: false 
-|
-| options             | string    |     
+| sort_id                | integer    | null: 
+false                    |
+| options                | string     |      |  
 
 ### Association
 - has_one_attached :image
 - has_many :materials, through: :product_materials
-- has_many :orders, through: :order_products
+- has_many :orders
 
 
 ## product_materialsテーブル
