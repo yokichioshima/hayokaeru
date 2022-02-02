@@ -1,0 +1,48 @@
+<div class='header'>
+  <h1>食材情報編集</h1>
+  <div class='header_btns'>
+    <a href="/materials" class='header_btn'>食材一覧へ戻る</a>
+  </div>
+</div>
+
+<div class='main'>
+<h2 class='material-sell-title'>食材の情報を編集</h2>
+  <div class='form-wrapper'>
+    <%= form_with model: @material, url: material_path(@material.id), method: :patch, local: true do |form| %>
+      <div class='img-upload'>
+        <div class='guid-text'>
+          食材画像
+          <span class='indispensable'>必須</span>
+        </div>
+        <label class='click-upload'>
+          <p class='upload-text'>画像をアップロード</p>
+          <%= form.file_field :image, class: 'image-btn', id: 'material-image' %>
+        </label>
+      </div>
+      <div class='guid-text'>
+        食材名
+        <span class='indispensable'>必須</span>
+      </div>
+      <%= form.text_field :name, class: 'material-text' %>
+      <div class='guid-text'>
+        基礎食品群
+        <span class='indispensable'>必須</span>
+      </div>
+      <%= form.collection_select(:category_id, Category.all, :id, :name, {}, {class: 'material-text'}) %>
+      <div class='guid-text'>
+        食材の値段（税込・販売単価で入力)
+      </div>
+      <%= form.text_field :price, class: 'material-text', placeholder: '円' %>
+      <div class='guid-text'>
+        メモ
+      </div>
+      <%= form.text_area :options, class: 'material-options', placeholder: '255文字まで' %>
+      <div class='input-btn-contents'>
+        <label class='input-post'>
+          <p class='post-text'>変更する</p>
+          <%= form.submit '変更する', class: 'input-btn' %>
+        </label>
+      </div>
+    <% end %>
+  </div>
+</div>

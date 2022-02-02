@@ -1,0 +1,27 @@
+.material {
+  height: 25vh;
+  width: cal(100vw / 3 - 3vw);
+  border: none;
+  padding: 5px;
+}
+
+.material-image {
+  height: 90%;
+  width: 100%;
+}
+
+.text {
+  display:flex;
+  justify-content: space-around; 
+}
+
+.material-name {
+  height: 2vh;
+  width: 50%;
+}
+
+.more {
+  width:50%;
+  display: flex;
+  justify-content: space-around;
+}
