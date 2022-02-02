@@ -1,4 +1,7 @@
 class Product < ApplicationRecord
+  extend ActiveHash::Associations::ActiveRecordExtensions
+  belongs_to :sort_id
+  
   validates :image, presence: true
   validates :name, presence: true
   validates :sort_id, numericality: { other_than: 1 , message: "can't be blank" }
