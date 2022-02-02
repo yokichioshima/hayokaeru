@@ -8,10 +8,17 @@ class MaterialsController < ApplicationController
   end
 
   def create
+    @material = Material.new(material_params)
+    if @material.save
+      redirect_to action: :index
+    else
+      render :new
+    end
   end
 
   private
 
   def material_params
-    params.require(:material).permit(:name, :image, :category_id, :price, :options).merge()
+    params.permit(:name, :image, :category_id, :price, :options)
+  end
 end

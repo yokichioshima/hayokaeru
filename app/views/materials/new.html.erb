@@ -1,7 +1,7 @@
 <div class='header'>
   <h1>食材登録</h1>
   <div class='header_btns'>
-    <a href="/materials" class='header_btn'>食材一覧</a>
+    <a href="/materials" class='header_btn'>食材一覧へ戻る</a>
   </div>
 </div>
 
@@ -10,9 +10,11 @@
     <%= form.text_field :name, class: 'form-material', placeholder: '食材名を入力してください' %>
     <label class='form-image'>
       <span class='image_file'>画像</span>
-      <%= form.text_field :image, class: 'hidden' %>
+      <%= form.file_field :image, class: 'hidden' %>
     </label>
-    <%= form.%>
+    <%= form.collection_select(:category_id, Category.all, :id, :name, {}, {class: 'category-select'}) %>
+    <%= form.text_field :price, class:'price', placeholder:'単価（円）' %>
+    <%= form.text_area :options, class:'options', placeholder:'追加事項' %>
     <%= form.submit '登録' %>
   <% end %>
 </div>

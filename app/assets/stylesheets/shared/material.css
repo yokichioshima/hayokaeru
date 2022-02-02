@@ -1,0 +1,12 @@
+.material {
+  max-height: 25vh;
+  width: cal(100vw / 3 - 3vw);
+  border: none;
+  padding: 5px;
+}
+
+.material-name {
+  height: 2vh;
+  width: 100%;
+  text-align: center;
+}

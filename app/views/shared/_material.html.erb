@@ -1,0 +1,8 @@
+      <div class='material'>
+        <div class='material-image'>
+          <%= image_tag material.image.variant(resize: '200x200'), class:'material-image' if material.image.attached? %>
+        </div>
+        <div class='material-name'>
+           <%= material.name %>
+        </div>
+      </div>
