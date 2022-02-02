@@ -1,0 +1,16 @@
+      <div class='product'>
+        <%= image_tag product.image.variant(resize: '200x200'), class:'product-image' if product.image.attached? %> 
+        <div class='text' >
+          <div class='product-name'>
+            <%= product.name %>
+          </div>
+          <div class='more'>
+            <span><%= image_tag 'arrow_top.png' %></span>
+            <ul class='more_list'>
+              <li>
+                <%= link_to '詳細', product_path(product.id) %>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>

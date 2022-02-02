@@ -1,0 +1,80 @@
+.header {
+  height: 10vh;
+  width: 100vw;
+}
+
+.main {
+  height: cal(100vh - 10vh);
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+
+.product-sell-title {
+  font-size: 20px;
+  margin-bottom: 5vh;
+}
+
+/* 入力案内文 */
+.guid-text {
+  font-size: 16px;
+  text-align: center;
+}
+/* 入力案内文 */
+
+/* 画像入力ボタン */
+.click-upload {
+  display: block;
+  font-size: 16px;
+  height: 30px;
+  width: 180px;
+  margin-top: 10px;
+  margin-left: 10px;
+  border-radius: 5px;
+  padding-top: 2px;
+  color: white;
+  text-decoration: none;
+  background-color: #228B22;
+}
+
+.image-btn {
+  display: none;
+}
+
+/* 入力欄 */
+.product-text {
+  font-size: 16px;
+  border: 1px solid grey;
+  border-radius: 4px;
+  padding: 16px 16px 8px;
+}
+
+.product-options {
+  font-size: 16px;
+  border: 1px solid grey;
+  border-radius: 4px;
+  padding: 50px;
+}
+/* 入力欄 */
+
+/* 登録ボタン */
+.input-post {
+  display: block;
+  font-size: 16px;
+  height: 60px;
+  width: 80px;
+  margin-top: 15px;
+  border-radius: 10px;
+  padding-top: 15px;
+  color: white;
+  text-decoration: none;
+  background-color: tomato;
+  text-align: center;
+}
+
+.input-btn {
+  display: none;
+}
