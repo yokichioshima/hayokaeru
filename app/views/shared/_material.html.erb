@@ -1,8 +1,16 @@
       <div class='material'>
-        <div class='material-image'>
-          <%= image_tag material.image.variant(resize: '200x200'), class:'material-image' if material.image.attached? %>
-        </div>
-        <div class='material-name'>
-           <%= material.name %>
+        <%= image_tag material.image.variant(resize: '200x200'), class:'material-image' if material.image.attached? %> 
+        <div class='text' >
+          <div class='material-name'>
+            <%= material.name %>
+          </div>
+          <div class='more'>
+            <span><%= image_tag 'arrow_top.png' %></span>
+            <ul class='more_list'>
+              <li>
+                <%= link_to '削除', material_path(material.id), method: :delete %>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>

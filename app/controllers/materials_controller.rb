@@ -16,6 +16,11 @@ class MaterialsController < ApplicationController
     end
   end
 
+  def destroy
+    material = Material.find(params[:id])
+    material.destroy
+  end
+
   private
 
   def material_params
