@@ -4,7 +4,7 @@
 }
 
 .main {
-  height: cal(100vh - 10vh);
+  height: calc(100vh - 10vh);
   width: 100vw;
   display: flex;
   flex-direction: column;

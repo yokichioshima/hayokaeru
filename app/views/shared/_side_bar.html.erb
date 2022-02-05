@@ -1,0 +1,53 @@
+<div class='side-bar-header'>
+  <%# <h1>メニュー登録</h1>
+  <div class='header_btns'>
+    <a href="/products" class='header_btn'>メニュー一覧へ戻る</a>
+  </div> %>
+</div> 
+
+<div class='form'>
+    <h2 class='product-sell-title'>メニューの情報を入力</h2>
+
+    <%= form_with url: "/products", method: :post, local: true do |form| %>
+      <div class='img-upload'>
+        <div class='guid-text'>
+          メニュー画像
+          <span class='indispensable'>必須</span>
+        </div>
+        <label class='click-upload'>
+          <p class='upload-text'>画像をアップロード</p>
+          <%= form.file_field :image, class: 'image-btn', id: 'material-image' %>
+        </label>
+      </div>
+      <div class='guid-text'>
+        メニュー名
+        <span class='indispensable'>必須</span>
+      </div>
+      <%= form.text_field :name, class: 'product-text' %>
+      <div class='guid-text'>
+        分類
+        <span class='indispensable'>必須</span>
+      </div>
+      <%= form.collection_select(:sort_id, Sort.all, :id, :name, {}, {class: 'product-text'}) %>
+      <div class='guid-text'>
+        食材のids
+      </div>
+      <input name="[material_ids][]" type="number" >   
+      <%# <%= form.number_field :material_ids, class: 'material-text', placeholder: 'id' %> 
+      <%# <%= form.number_field :material_ids, class: 'material-text', placeholder: 'id' %> 
+      <%# <%= form.number_field :material_ids, class: 'material-text', placeholder: 'id' %> 
+      <%# <%= form.number_field :material_ids, class: 'material-text', placeholder: 'id' %> 
+      <%# <%= form.number_field :material_ids, class: 'material-text', placeholder: 'id' %> 
+
+      <div class='guid-text'>
+        メモ
+      </div>
+      <%= form.text_area :options, class: 'product-options', placeholder: '255文字まで' %>
+      <div class='input-btn-contents'>
+        <label class='input-post'>
+          <p class='post-text'>登録する</p>
+          <%= form.submit '登録する', class: 'input-btn' %>
+        </label>
+      </div>
+    <% end %>
+</div>
