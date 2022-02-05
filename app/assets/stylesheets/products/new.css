@@ -13,7 +13,6 @@
   background-color: yellowgreen;
   height: 110px;
   padding: 0 15px;
-
 }
 
 .page-title {
@@ -45,6 +44,12 @@
   background-color: papayawhip;
   height: calc(100vh - 110px);
   padding: 0 20px;
+  text-align: center;
+}
+
+.product-sell-title {
+  font-size: 20px;
+  margin-bottom: 1vh;
   text-align: center;
 }
 
@@ -111,41 +116,54 @@
 }
 
 .guid-header {
-  height: 100px;
+  height: 20px;
   padding: 0 10px;
 }
 
 .materials-display {
   background-color: transparent;
-  height: calc(100vh - 100px);
+  height: calc(100vh - 20px);
   padding: 46px 10px 10px;
   overflow: scroll;
 }
 
-.product-sell-title {
-  font-size: 20px;
-  margin-bottom: 1vh;
-  text-align: center;
-}
-
-
-
-
-
 .category-name {
-  height: 5vh;
-  width: 100vw;
+  font-size: 16px;
   text-align: left;
   border-top: 1px dotted lightslategray;
   border-bottom: 1px solid lightslategray;
-  padding: 0px 5px;
+  padding: 10px;
 }
-
+/* 料理の画像と名前 */
 .materials-wrapper {
-  height: max-content;
   width: 100vw;
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
+  padding: 10px;
 }
+
+.material {
+  width: 200px;
+  position: relative;
+}
+
+.more-list {
+  position: absolute;
+    top: 90px;
+    left: 160px;
+}
+
+.edit-material,
+.destroy-material {
+  color: white;
+  text-decoration: none;
+}
+
+.material-name {
+  font-size: 14px;
+  width: 100%;
+  text-align: center;
+}
+/* 料理の画像と名前 */
 /* 料理一覧 */

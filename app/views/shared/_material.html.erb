@@ -1,8 +1,15 @@
       <div class='material'>
-        <%= image_tag material.image.variant(resize: '200x200'), class:'material-image' if material.image.attached? %> 
-        <div class='text' >
-          <div class='material-name'>
-            <%= material.name %>
-          </div>
+        <div class='material-image-wrapper'>
+          <%= image_tag material.image.variant(resize: '200x200'), class:'material-image' if material.image.attached? %>
+          <ul class='more-list' >
+            <li>
+              <%= link_to '編集', edit_material_path(material.id), class:'edit-material' if params[:"controller"] == "materials" && params[:"action"] == "index" %>
+            </li>
+            <li>
+              <%= link_to '削除', material_path(material.id), method: :delete, class:'destroy-material' if params[:"controller"] == "materials" && params[:"action"] == "index" %>
+            </li>
+        </div>
+        <div class='material-name'>
+          <%= material.name %>
         </div>
       </div>

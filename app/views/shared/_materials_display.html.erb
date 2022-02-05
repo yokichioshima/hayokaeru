@@ -1,6 +1,3 @@
-<div class='guid-header'>
-<div>
-<div class='materials-display'>
   <div class='category-name'>肉類・魚類・大豆製品</div>
   <div class='materials-wrapper'>
     <% @materials.where(category_id: 2).each do |material| %>
@@ -43,4 +40,3 @@
       <%= render partial: 'shared/material', locals: { material: material } %>
     <% end %>
   </div>
-</div>
