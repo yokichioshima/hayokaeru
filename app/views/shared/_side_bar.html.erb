@@ -32,15 +32,11 @@
       </div>
       <%= form.collection_select(:sort_id, Sort.all, :id, :name, {}, {class: 'input-form'}) %>
       <div class='guid-text'>
-        食材のids
+        使用する食材
       </div>
-      <input name="[material_ids][]" type="number" class='input-form' >   
-      <%# <%= form.number_field :material_ids, class: 'material-text', placeholder: 'id' %> 
-      <%# <%= form.number_field :material_ids, class: 'material-text', placeholder: 'id' %> 
-      <%# <%= form.number_field :material_ids, class: 'material-text', placeholder: 'id' %> 
-      <%# <%= form.number_field :material_ids, class: 'material-text', placeholder: 'id' %> 
-      <%# <%= form.number_field :material_ids, class: 'material-text', placeholder: 'id' %> 
-
+      <div id='pick-materials'>
+      </div>
+        <%# javascriptのイベント発火により、ここに使用する食材のid情報を挿入する  %>
       <div class='guid-text'>
         メモ
       </div>

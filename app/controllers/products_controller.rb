@@ -14,11 +14,10 @@ class ProductsController < ApplicationController
 
   def create
     @product = Product.new(product_params)
-    binding.pry
     if @product.save
       redirect_to action: :index
     else
-      render :new
+      redirect_to action: :new
     end
   end
 

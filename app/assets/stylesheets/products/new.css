@@ -83,6 +83,18 @@
   margin: 10px 0;
 }
 
+#pick-materials {
+  font-size: 16px;
+  border: 1px solid grey;
+  border-radius: 4px;
+  padding: 25px;
+  margin: 10px 0;
+}
+
+#input-material-ids {
+
+}
+
 .options-form {
   font-size: 16px;
   border: 1px solid grey;
@@ -144,8 +156,20 @@
 }
 
 .material {
+  color: black;
   width: 200px;
   position: relative;
+}
+
+.material-image-wrapper {
+  position: relative;
+}
+
+#material-id {
+  display: none;
+  position: absolute;
+    top: 70px;
+    left: 70px;
 }
 
 .more-list {
