@@ -1,0 +1,51 @@
+<div class='side-bar-header'>
+  <div class='page-title'>
+    料理を登録する
+  </div>
+  <div class='header-btn-wrapper'>
+    <a href="/products" class='header-btn'>料理一覧へ戻る</a>
+  </div> 
+</div> 
+
+<div class='form'>
+    <h2 class='product-sell-title'>情報を入力してください</h2>
+
+    <%= form_with url: "/products", method: :post, local: true do |form| %>
+      <div class='img-upload'>
+        <div class='guid-text'>
+          料理画像
+          <span class='indispensable'>必須</span>
+        </div>
+        <label class='click-upload'>
+          <p class='upload-text'>画像をアップロード</p>
+          <%= form.file_field :image, class: 'image-btn', id: 'material-image' %>
+        </label>
+      </div>
+      <div class='guid-text'>
+        料理名
+        <span class='indispensable'>必須</span>
+      </div>
+      <%= form.text_field :name, class: 'input-form' %>
+      <div class='guid-text'>
+        分類
+        <span class='indispensable'>必須</span>
+      </div>
+      <%= form.collection_select(:sort_id, Sort.all, :id, :name, {}, {class: 'input-form'}) %>
+      <div class='guid-text'>
+        使用する食材
+      </div>
+      <div id='pick-materials'>
+      </div>
+        <%# javascriptのイベント発火により、ここに使用する食材のid情報を挿入する  %>
+      <div class='guid-text'>
+        メモ
+      </div>
+      <%= form.text_area :options, class: 'options-form', placeholder: '255文字まで' %>
+      <div class='input-btn-contents'>
+        <label class='input-post'>
+          <p class='post-text'>登録する</p>
+          <%= form.submit '登録する', class: 'input-btn' %>
+        </label>
+      </div>
+    <% end %>
+</div>

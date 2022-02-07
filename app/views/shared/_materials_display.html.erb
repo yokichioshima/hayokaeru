@@ -1,0 +1,42 @@
+  <div class='category-name'>肉類・魚類・大豆製品</div>
+  <div class='materials-wrapper'>
+    <% @materials.where(category_id: 2).each do |material| %>
+      <%= render partial: 'shared/material', locals: { material: material } %>
+    <% end %>
+  </div>
+  <div class='category-name'>乳製品・海藻・小魚類</div>
+  <div class='materials-wrapper'>
+    <% @materials.where(category_id: 3).each do |material| %>
+      <%= render partial: 'shared/material', locals: { material: material } %>
+    <% end %>
+  </div>
+  <div class='category-name'>緑黄色野菜</div>
+  <div class='materials-wrapper'>
+    <% @materials.where(category_id: 4).each do |material| %>
+      <%= render partial: 'shared/material', locals: { material: material } %>
+    <% end %>
+  </div>
+  <div class='category-name'>淡色野菜・果物</div>
+  <div class='materials-wrapper'>
+    <% @materials.where(category_id: 5).each do |material| %>
+      <%= render partial: 'shared/material', locals: { material: material } %>
+    <% end %>
+  </div>
+  <div class='category-name'>穀類・芋類・砂糖類</div>
+  <div class='materials-wrapper'>
+    <% @materials.where(category_id: 6).each do |material| %>
+      <%= render partial: 'shared/material', locals: { material: material } %>
+    <% end %>
+  </div>
+  <div class='category-name'>油脂類</div>
+  <div class='materials-wrapper'>
+    <% @materials.where(category_id: 7).each do |material| %>
+      <%= render partial: 'shared/material', locals: { material: material } %>
+    <% end %>
+  </div>
+  <div class='category-name'>その他</div>
+  <div class='materials-wrapper'>
+    <% @materials.where(category_id: 8).each do |material| %>
+      <%= render partial: 'shared/material', locals: { material: material } %>
+    <% end %>
+  </div>

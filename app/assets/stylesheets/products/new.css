@@ -1,0 +1,193 @@
+.wrapper {
+  display: flex;
+}
+
+
+/* サイドヘッダー */
+.side-bar {
+  height: 100vh;
+  width: 300px;
+}
+
+.side-bar-header {
+  background-color: yellowgreen;
+  height: 110px;
+  padding: 0 15px;
+}
+
+.page-title {
+  color: black;
+  font-size: 18px;
+  font-family: monospace;
+  display: inline-block;
+  border-bottom: 5px solid papayawhip;
+  padding:10px;
+}
+
+.header-btn-wrapper {
+  margin-top: 15px;
+}
+
+.header-btn {
+  color: white;
+  font-size: 10px;
+  padding: 10px;
+  margin-left: 170px;
+  border: 1px solid papayawhip;
+  border-radius: 5px;
+  text-decoration: none;
+}
+/* サイドヘッダー */
+
+/* 入力フォーム */
+.form {
+  background-color: papayawhip;
+  height: calc(100vh - 110px);
+  padding: 0 20px;
+  text-align: center;
+}
+
+.product-sell-title {
+  font-size: 20px;
+  margin-bottom: 1vh;
+  text-align: center;
+}
+
+.guid-text {
+  font-size: 16px;
+}
+
+.click-upload {
+  display: block;
+  font-size: 16px;
+  height: 30px;
+  width: 180px;
+  margin: 10px auto;
+  border-radius: 5px;
+  padding-top: 2px;
+  color: white;
+  text-decoration: none;
+  background-color: #228B22;
+}
+
+.image-btn {
+  display: none;
+}
+
+.input-form {
+  font-size: 16px;
+  border: 1px solid grey;
+  border-radius: 4px;
+  padding: 16px 16px 8px;
+  text-align: center;
+  margin: 10px 0;
+}
+
+#pick-materials {
+  font-size: 16px;
+  border: 1px solid grey;
+  border-radius: 4px;
+  padding: 25px;
+  margin: 10px 0;
+}
+
+#input-material-ids {
+
+}
+
+.options-form {
+  font-size: 16px;
+  border: 1px solid grey;
+  border-radius: 4px;
+  padding: 30px;
+  margin: 10px 0;
+}
+
+.input-post {
+  display: block;
+  font-size: 16px;
+  height: 60px;
+  width: 90px;
+  margin: 15px auto;
+  border-radius: 10px;
+  padding-top: 15px;
+  color: white;
+  text-decoration: none;
+  background-color: tomato;
+}
+
+.input-btn {
+  display: none;
+}
+/* 入力フォーム */
+
+
+/* 料理一覧*/
+.materials-all {
+  width: calc(100vw - 300px);
+}
+
+.guid-header {
+  height: 20px;
+  padding: 0 10px;
+}
+
+.materials-display {
+  background-color: transparent;
+  height: calc(100vh - 20px);
+  padding: 46px 10px 10px;
+  overflow: scroll;
+}
+
+.category-name {
+  font-size: 16px;
+  text-align: left;
+  border-top: 1px dotted lightslategray;
+  border-bottom: 1px solid lightslategray;
+  padding: 10px;
+}
+/* 料理の画像と名前 */
+.materials-wrapper {
+  width: 100vw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  padding: 10px;
+}
+
+.material {
+  color: black;
+  width: 200px;
+  position: relative;
+}
+
+.material-image-wrapper {
+  position: relative;
+}
+
+#material-id {
+  display: none;
+  position: absolute;
+    top: 70px;
+    left: 70px;
+}
+
+.more-list {
+  position: absolute;
+    top: 90px;
+    left: 160px;
+}
+
+.edit-material,
+.destroy-material {
+  color: white;
+  text-decoration: none;
+}
+
+.material-name {
+  font-size: 14px;
+  width: 100%;
+  text-align: center;
+}
+/* 料理の画像と名前 */
+/* 料理一覧 */

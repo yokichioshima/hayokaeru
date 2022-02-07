@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_31_044158) do
+ActiveRecord::Schema.define(version: 2022_02_03_033856) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -42,5 +42,25 @@ ActiveRecord::Schema.define(version: 2022_01_31_044158) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "product_materials", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "product_id", null: false
+    t.bigint "material_id", null: false
+    t.float "single_quantity"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["material_id"], name: "index_product_materials_on_material_id"
+    t.index ["product_id"], name: "index_product_materials_on_product_id"
+  end
+
+  create_table "products", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name", null: false
+    t.integer "sort_id", null: false
+    t.string "options"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "product_materials", "materials"
+  add_foreign_key "product_materials", "products"
 end

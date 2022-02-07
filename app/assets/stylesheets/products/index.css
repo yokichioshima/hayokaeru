@@ -33,7 +33,7 @@ h1 {
   overflow: scroll;
 }
 
-.category-name {
+.sort-name {
   height: 5vh;
   width: 100vw;
   text-align: left;
@@ -42,38 +42,10 @@ h1 {
   padding: 0px 5px;
 }
 
-.materials-wrapper {
+.products-wrapper {
   height: max-content;
   width: 100vw;
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
-}
-
-.material {
-  height: 25vh;
-  width: cal(100vw / 3 - 3vw);
-  border: none;
-  padding: 5px;
-}
-
-.material-image {
-  height: 90%;
-  width: 100%;
-}
-
-.text {
-  display:flex;
-  justify-content: space-around; 
-}
-
-.material-name {
-  height: 2vh;
-  width: 50%;
-}
-
-.more {
-  width:50%;
-  display: flex;
-  justify-content: space-around;
-}
+  }
