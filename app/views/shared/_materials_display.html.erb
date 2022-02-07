@@ -34,9 +34,15 @@
       <%= render partial: 'shared/material', locals: { material: material } %>
     <% end %>
   </div>
-  <div class='category-name'>その他</div>
+  <div class='category-name'>調味料</div>
   <div class='materials-wrapper'>
     <% @materials.where(category_id: 8).each do |material| %>
+      <%= render partial: 'shared/material', locals: { material: material } %>
+    <% end %>
+  </div>
+    <div class='category-name'>その他</div>
+  <div class='materials-wrapper'>
+    <% @materials.where(category_id: 9).each do |material| %>
       <%= render partial: 'shared/material', locals: { material: material } %>
     <% end %>
   </div>

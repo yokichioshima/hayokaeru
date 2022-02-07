@@ -1,0 +1,30 @@
+    <div class='sort-name'>主食</div>
+    <div class='products-wrapper'>
+      <% @products.where(sort_id: 2).each do |product| %>
+        <%= render partial: 'shared/product', locals: { product: product } %>
+      <% end %>
+    </div>
+    <div class='sort-name'>汁物</div>
+    <div class='products-wrapper'>
+      <% @products.where(sort_id: 3).each do |product| %>
+        <%= render partial: 'shared/product', locals: { product: product } %>
+      <% end %>
+    </div>
+    <div class='sort-name'>主菜</div>
+    <div class='products-wrapper'>
+      <% @products.where(sort_id: 4).each do |product| %>
+        <%= render partial: 'shared/product', locals: { product: product } %>
+      <% end %>
+    </div>
+    <div class='sort-name'>副菜</div>
+    <div class='products-wrapper'>
+      <% @products.where(sort_id: 5).each do |product| %>
+        <%= render partial: 'shared/product', locals: { product: product } %>
+      <% end %>
+    </div>
+    <div class='sort-name'>その他</div>
+    <div class='products-wrapper'>
+      <% @products.where(sort_id: 6).each do |product| %>
+        <%= render partial: 'shared/product', locals: { product: product } %>
+      <% end %>
+    </div>

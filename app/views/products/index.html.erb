@@ -1,42 +1,13 @@
-<div class='wrapper'>
-  <div class='header'>
-    <h1><span>メニュー一覧</span></h1>
-    <div class='header-btns'>
-       <a href="/products/new" class='header-btn'>メニュー登録</a>
-       <a href="#" class='header-btn'>オーダー一覧</a>
-       <a href="#" class='header-btn'>買い物リスト</a>
+  <div class='index-header'>
+    <div class='index-page-title'>
+      料理一覧
+    </div>
+    <div class='index-header-btns'>
+       <a href="/products/new" class='index-header-btn'>料理登録</a>
+       <a href="#" class='index-header-btn'>オーダー一覧</a>
+       <a href="#" class='index-header-btn'>買い物リスト</a>
     </div>
   </div>
-  <div class='main'>
-    <div class='sort-name'>主食</div>
-    <div class='products-wrapper'>
-      <% @products.where(sort_id: 2).each do |product| %>
-        <%= render partial: 'shared/product', locals: { product: product } %>
-      <% end %>
-    </div>
-    <div class='sort-name'>汁物</div>
-    <div class='products-wrapper'>
-      <% @products.where(sort_id: 3).each do |product| %>
-        <%= render partial: 'shared/product', locals: { product: product } %>
-      <% end %>
-    </div>
-    <div class='sort-name'>主菜</div>
-    <div class='products-wrapper'>
-      <% @products.where(sort_id: 4).each do |product| %>
-        <%= render partial: 'shared/product', locals: { product: product } %>
-      <% end %>
-    </div>
-    <div class='sort-name'>副菜</div>
-    <div class='products-wrapper'>
-      <% @products.where(sort_id: 5).each do |product| %>
-        <%= render partial: 'shared/product', locals: { product: product } %>
-      <% end %>
-    </div>
-    <div class='sort-name'>その他</div>
-    <div class='products-wrapper'>
-      <% @products.where(sort_id: 6).each do |product| %>
-        <%= render partial: 'shared/product', locals: { product: product } %>
-      <% end %>
-    </div>
+  <div class='products-diplay'>
+    <%= render 'shared/products_display' %>
   </div>
-</div>
