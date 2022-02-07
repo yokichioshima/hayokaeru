@@ -26,4 +26,8 @@ class ProductsController < ApplicationController
   def product_params
     params.permit(:name, :image, :sort_id, :options, material_ids: [], single_quantities: [])
   end
+
+  def single_quantities_pamams
+    params.permit(single_quantities: [])
+  end
 end
