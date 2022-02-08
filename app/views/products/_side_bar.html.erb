@@ -88,7 +88,7 @@
         <% end %>
       </div>
       <% @product.materials.each do |material| %>
-        <input name="[material_ids][]"  class="input-form" id=<% material.id %> value=<% material.id %> > 
+        <input name="[material_ids][]" type="hidden" class="input-form" id=<%= material.id %>  value=<%= material.id %> > 
       <% end %>
         <%# javascriptのイベント発火により、ここに使用する食材のid情報を挿入する  %>
       <div class='guid-text'>

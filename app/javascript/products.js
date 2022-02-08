@@ -1,7 +1,7 @@
 function getMaterialIds (){
   const materialElements = document.querySelectorAll(".material");
   const pickMaterials = document.getElementById("pick-materials");
-  let array = new Array();
+  
 
   materialElements.forEach(function(list) {
     list.addEventListener('click', function(){
