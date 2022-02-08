@@ -1,6 +1,7 @@
 <div class='side-bar-header'>
   <div class='page-title'>
-    料理を登録する
+    <%= "料理を登録する" if params[:"controller"] == "products" && params[:"action"] == "new" %>
+    <%= "料理情報を編集する" if params[:"controller"] == "products" && params[:"action"] == "edit" %>
   </div>
   <div class='header-btn-wrapper'>
     <a href="/products" class='header-btn'>料理一覧へ戻る</a>
@@ -8,6 +9,7 @@
 </div> 
 
 <div class='form'>
+  <% if params[:"controller"] == "products" && params[:"action"] == "new" %>
     <h2 class='product-sell-title'>情報を入力してください</h2>
 
     <%= form_with url: "/products", method: :post, local: true do |form| %>
@@ -17,7 +19,8 @@
           <span class='indispensable'>必須</span>
         </div>
         <label class='click-upload'>
-          <p class='upload-text'>画像をアップロード</p>
+          <p class='upload-text'>
+            <p>画像をアップロード</p>
           <%= form.file_field :image, class: 'image-btn', id: 'material-image' %>
         </label>
       </div>
@@ -48,4 +51,56 @@
         </label>
       </div>
     <% end %>
+  <% end %>
+  <% if params[:"controller"] == "products" && params[:"action"] == "edit" %>
+    <h2 class='product-sell-title'>情報を変更してください</h2>
+
+    <%= form_with url: product_path(@product.id), model: @product, method: :put, local: true do |form| %>
+      <div class='img-upload'>
+        <div class='guid-text'>
+          料理画像
+          <span class='indispensable'>必須</span>
+        </div>
+        <label class='click-upload'>
+          <p class='upload-text'>
+            <p>画像をアップロード</p>
+          <%= form.file_field :image, class: 'image-btn', id: 'material-image' %>
+        </label>
+      </div>
+      <div class='guid-text'>
+        料理名
+        <span class='indispensable'>必須</span>
+      </div>
+      <%= form.text_field :name, class: 'input-form' %>
+      <div class='guid-text'>
+        分類
+        <span class='indispensable'>必須</span>
+      </div>
+      <%= form.collection_select(:sort_id, Sort.all, :id, :name, {}, {class: 'input-form'}) %>
+      <div class='guid-text'>
+        使用する食材
+      </div>
+      <div id='pick-materials'>
+        <% @product.materials.each do |material| %>
+          <b id='<% material.name %>'>
+            <%= material.name %>
+          </b>
+        <% end %>
+      </div>
+      <% @product.materials.each do |material| %>
+        <input name="[material_ids][]"  class="input-form" id=<% material.id %> value=<% material.id %> > 
+      <% end %>
+        <%# javascriptのイベント発火により、ここに使用する食材のid情報を挿入する  %>
+      <div class='guid-text'>
+        メモ
+      </div>
+      <%= form.text_area :options, class: 'options-form', placeholder: '255文字まで' %>
+      <div class='input-btn-contents'>
+        <label class='input-post'>
+          <p class='post-text'>変更する</p>
+          <%= form.submit '変更する', class: 'input-btn' %>
+        </label>
+      </div>
+    <% end %>
+  <% end %>
 </div>

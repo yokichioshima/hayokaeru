@@ -1,0 +1,95 @@
+.show-header {
+  background-color: yellowgreen;
+  height: 100px;
+  width: 100vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+.show-page-title {
+  font-size: 20px;
+  display: inline-block;
+  border-bottom: 5px solid papayawhip;
+  padding: 10px;
+}
+
+.show-header-btn {
+  color: white;
+  font-size: 16px;
+  text-decoration: none;
+  margin-left: 30px;
+  padding: 0 20px;
+  border: 1px solid papayawhip;
+  border-radius: 5px;
+}
+/* メイン */
+.show-information-wrapper {
+  background-color: transparent;
+  height: calc(100vh - 100px);
+  width: 100vw;
+  padding: 0 20px;
+}
+
+.product-image {
+  display: block;
+  margin-top: 40px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.product-name-wrapper {
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.get-edit-page-btn {
+  background-color: #ff9933;
+  color:white;
+  font-size: 20px;
+  height: 40px;
+  width: 100px;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-right: 10px;
+  margin-left: 23vw;
+  padding: 10px 20px;
+}
+
+.destroy-product-data-btn {
+  background-color: #999933;
+  color: white;
+  font-size: 20px;
+  height: 40px;
+  width: 50px;
+  text-decoration: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+}
+
+
+.product-sort-name-wrapper {
+  color: black;
+  font-size: 20px;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.material-names-label-text {
+  color: black;
+  font-size: 18px;
+  margin-left: 5vw;
+}
+
+.product-materials-names-wrapper {
+  color: black;
+  font-size: 20px;
+  width: 600px;
+  text-align: center;
+  border: 1px solid;
+  border-radius: 5px;
+  padding: 20px;
+  margin: 0 auto;
+}

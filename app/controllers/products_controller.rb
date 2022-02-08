@@ -21,6 +21,23 @@ class ProductsController < ApplicationController
     end
   end
 
+  def edit
+    @product = Product.find(params[:id])
+    @materials = Material.all
+  end
+
+  def update
+    @product = Product.find(params[:id])
+    if @product.update(product_params)
+      redirect_to action: :show
+    else
+      redirect_to action: :edit
+    end
+  end
+
+  def destroy
+  end
+
   private
 
   def product_params
