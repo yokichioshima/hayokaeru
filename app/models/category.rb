@@ -7,8 +7,8 @@ class Category < ActiveHash::Base
     { id: 5, name: '淡色野菜・果物' },
     { id: 6, name: '穀類・芋類・砂糖' },
     { id: 7, name: '油脂類' },
-    { id: 8, name: '調味料'},
-    { id: 9, name: 'その他'}
+    { id: 8, name: '調味料' },
+    { id: 9, name: 'その他' }
   ]
 
   include ActiveHash::Associations

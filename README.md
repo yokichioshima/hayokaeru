@@ -43,13 +43,11 @@ false                    |
 | Column                 | Type       | Options                        |
 | ---------------------- | ---------- | ------------------------------ |
 | name                   | string       | null: false                    |
-| product_1                  | integer     | foreign_key: true        |
-| product_2                  | integer     | foreign_key: true        |
-| product_3                  | integer     |foreign_key: true        |
-| product_4                  | integer     | foregin_key: true        |
-| product_5                  | integer     | foregin_key: true        |
-| single_quantity            | float       |
-                         |
+| product_1_id                  | integer     | foreign_key: true        |
+| product_2_id                  | integer     | foreign_key: true        |
+| product_3_id                  | integer     |foreign_key: true        |
+| product_4_id                  | integer     | foregin_key: true        |
+| product_5_id                  | integer     | foregin_key: true        |
                                                   
 ### Association
 - has_many :products

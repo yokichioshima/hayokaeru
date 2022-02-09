@@ -5,7 +5,7 @@ class Sort < ActiveHash::Base
     { id: 3, name: '汁物' },
     { id: 4, name: '主菜' },
     { id: 5, name: '副菜' },
-    { id: 6, name: 'その他'}
+    { id: 6, name: 'その他' }
   ]
 
   include ActiveHash::Associations

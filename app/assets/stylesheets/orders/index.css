@@ -1,0 +1,74 @@
+.catch-copy {
+  background-color: transparent;
+  height: 20px;
+  padding: 0 20px;
+}
+
+.top-page-header {
+  background-color: yellowgreen;
+  height: calc(100px - 20px);
+  padding: 0 20px;
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.app-title {
+  color: #cc3300;
+  font-size: 30px;
+  font-family: 'Londrina Shadow', cursive;
+}
+
+
+.move-btns-wrapper {
+  width: 43vw;
+  display: flex;
+  color: white;
+  font-size: 16px;
+}
+
+.move-to-shopping-list {
+  color: white;
+  font-size: 16px;
+  text-decoration: none;
+  margin-left: 15px;
+  padding: 0 10px;
+  border: 1px solid papayawhip;
+  border-radius: 5px;
+}
+
+.move-to-order-new {
+  color: white;
+  font-size: 16px;
+  text-decoration: none;
+  margin-left: 15px;
+  padding: 0 10px;
+  border: 1px solid papayawhip;
+  border-radius: 5px;
+}
+
+.move-to-product-index {
+  color: white;
+  font-size: 16px;
+  text-decoration: none;
+  margin-left: 15px;
+  padding: 0 10px;
+  border: 1px solid papayawhip;
+  border-radius: 5px;
+}
+
+.move-to-material-index {
+  color: white;
+  font-size: 16px;
+  text-decoration: none;
+  margin-left: 15px;
+  padding: 0 10px;
+  border: 1px solid papayawhip;
+  border-radius: 5px;
+}
+.top-page-infomations-wrapper {
+  background-color: transparent;
+  height: calc(100vh - 300px);
+  width: 100vw;
+  padding: 0 20px;
+}
