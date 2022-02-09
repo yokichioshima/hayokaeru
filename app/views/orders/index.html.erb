@@ -1,0 +1,31 @@
+<div class='catch-copy'>
+  買い物を見通しよく
+</div>
+<div class='top-page-header'>
+  <div class='app-title'>
+    サクッと買える！
+  </div>
+  <div class='move-btns-wrapper'>    
+    <%= link_to '買い物リスト', '#',class: 'move-to-shopping-list' %>    
+    <%= link_to '献立登録', '#', class: 'move-to-order-new' %>
+    <%= link_to '料理一覧', products_path, class: 'move-to-product-index' %>
+    <%= link_to '食材一覧', materials_path, class: 'move-to-material-index' %>
+  </div>
+</div>
+<div class='top-page-infomations-wrapper'>
+  <% @orders.each do |order| %>
+    <div class='oreder-wrapper'>
+      <div class='order-name'>
+        <%= order.name %>
+      </div>
+      <% oreder.products.each do |product| %>
+        <div class='top-page-material-wrapper'>
+          <%= image_tag material.image.variant(resize: '200x200'), class:'material-image' if material.image.attached? %>
+          <div class='material-name'>
+            <%= material.name %>
+          </div>
+        </div>
+      <% end %>  
+    </div>
+  <% end %> 
+</div>
