@@ -1,0 +1,59 @@
+<div class='side-bar-header'>
+  <div class='page-title'>
+    <%= "献立を組み立てる" if params[:"controller"] == "orders" && params[:"action"] == "new" %>
+    <%= "献立を編集する" if params[:"controller"] == "orders" && params[:"action"] == "edit" %>
+  </div>
+  <div class='header-btn-wrapper'>
+    <a href='/' class='header-btn'>トップページへ戻る</a>
+  </div>
+</div> 
+
+<div class='form'>
+
+  <% if params[:"controller"] == "orders" && params[:"action"] == "new" %>
+    <h2 class='orders-sell-title'>情報を入力してください</h2>
+    <%= form_with url: "/orders", method: :post, local: true do |form| %>
+      <div class='guid-text'>献立の名前 <span class='indispensable'>必須</span></div>
+      <%= form.text_field :name, class:"input-order-name" %>
+      <% form.text_field :name, class:'order-name' %>
+      <div class='guid-text'>献立 <span class='indispensable'>必須(最大5品)</span></div>
+      <div class='pick-products'>
+        <% 5.times do |i| %>
+          <div class='product-<%= i + 1 %>-name'></div>
+          <input name='product_<%= i + 1 %>' type='hidden' class='input-product-<%= i+1 %>' >
+        <% end %>
+      </div>
+        <%# javascriptのイベント発火により、ここに使用する食材のid情報を挿入する  %>
+      <div class='input-btn-contents'>
+        <label class='input-post'>
+          <p class='post-text'>登録する</p>
+          <%= form.submit '登録する', class: 'input-btn' %>
+        </label>
+      </div>
+    <% end %>
+  <% end %>
+
+  <% if params[:"controller"] == "orders" && params[:"action"] == "edit" %>
+    <h2 class='orders-sell-title'>料理を変更してください</h2>
+    <%= form_with url: order_path(@order.id), model: @order, method: :put, local: true do |form| %>
+      <div id='pick-materials'>
+        <% @product.materials.each do |material| %>
+          <b id='<% material.name %>'>
+            <%= material.name %>
+          </b>
+        <% end %>
+      </div>
+      <% @product.materials.each do |material| %>
+        <input name="[material_ids][]" type="hidden" class="input-form" id=<%= material.id %>  value=<%= material.id %> > 
+      <% end %>
+        <%# javascriptのイベント発火により、ここに使用する食材のid情報を挿入する  %>
+      <div class='input-btn-contents'>
+        <label class='input-post'>
+          <p class='post-text'>変更する</p>
+          <%= form.submit '変更する', class: 'input-btn' %>
+        </label>
+      </div>
+    <% end %>
+  <% end %>
+
+</div>

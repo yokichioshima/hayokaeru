@@ -9,6 +9,7 @@
 </div> 
 
 <div class='form'>
+
   <% if params[:"controller"] == "products" && params[:"action"] == "new" %>
     <h2 class='product-sell-title'>情報を入力してください</h2>
 
@@ -52,6 +53,7 @@
       </div>
     <% end %>
   <% end %>
+
   <% if params[:"controller"] == "products" && params[:"action"] == "edit" %>
     <h2 class='product-sell-title'>情報を変更してください</h2>
 
@@ -103,4 +105,5 @@
       </div>
     <% end %>
   <% end %>
+  
 </div>
