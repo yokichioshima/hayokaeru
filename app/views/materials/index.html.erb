@@ -1,61 +1,16 @@
-<div class='wrapper'>
-  <div class='header'>
-    <h1><span>食材一覧</span></h1>
-    <div class='header-btns'>
-       <a href="/materials/new" class='header-btn'>食材登録</a>
-       <a href="/" class='header-btn'>献立一覧</a>
-       <a href="#" class='header-btn'>買い物リスト</a>
-    </div>
+<div class='catch-copy'>
+  買い物を見通しよく
+</div>
+<div class='material-index-header'>
+  <div class='material-index-page-title'>
+    食材一覧
   </div>
-  <div class='main'>
-    <div class='category-name'>肉類・魚類・大豆製品</div>
-    <div class='materials-wrapper'>
-      <% @materials.where(category_id: 2).each do |material| %>
-        <%= render partial: 'shared/material', locals: { material: material } %>
-      <% end %>
-    </div>
-    <div class='category-name'>乳製品・海藻・小魚類</div>
-    <div class='materials-wrapper'>
-      <% @materials.where(category_id: 3).each do |material| %>
-        <%= render partial: 'shared/material', locals: { material: material } %>
-      <% end %>
-    </div>
-    <div class='category-name'>緑黄色野菜</div>    
-    <div class='materials-wrapper'>
-      <% @materials.where(category_id: 4).each do |material| %>
-        <%= render partial: 'shared/material', locals: { material: material } %>
-      <% end %>
-    </div>
-    <div class='category-name'>淡色野菜・果物</div>
-    <div class='materials-wrapper'>
-      <% @materials.where(category_id: 5).each do |material| %>
-        <%= render partial: 'shared/material', locals: { material: material } %>
-      <% end %>
-    </div>
-    <div class='category-name'>穀類・芋類・砂糖</div>
-    <div class='materials-wrapper'>
-      <% @materials.where(category_id: 6).each do |material| %>
-        <%= render partial: 'shared/material', locals: { material: material } %>
-      <% end %>
-    </div>
-    <div class='category-name'>油脂類<div>
-    <div class='materials-wrapper'>
-      <% @materials.where(category_id: 7).each do |material| %>
-        <%= render partial: 'shared/material', locals: { material: material } %>
-      <% end %>
-    </div>
-    <div class='category-name'>調味料</div>
-    <div class='materials-wrapper'> 
-      <% @materials.where(category_id: 8).each do |material| %>
-        <%= render partial: 'shared/material', locals: { material: material } %>
-      <% end %>
-    </div>
-        <div class='category-name'>その他</div>
-    <div class='materials-wrapper'> 
-      <% @materials.where(category_id: 9).each do |material| %>
-        <%= render partial: 'shared/material', locals: { material: material } %>
-      <% end %>
-    </div>
-
+  <div class='material-index-header-btns'>
+    <a href="/materials/new" class='material-index-header-btn'>食材登録</a>
+    <a href="/" class='material-index-header-btn'>献立一覧</a>
+    <a href="#" class='material-index-header-btn'>買い物リスト</a>
   </div>
+</div>
+<div class='materials-diplay'>
+  <%= render 'shared/materials_display' %>
 </div>

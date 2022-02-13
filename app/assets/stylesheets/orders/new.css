@@ -6,7 +6,7 @@
 /* サイドヘッダー */
 .side-bar {
   height: 100vh;
-  width: 300px;
+  width: 30vw;
 }
 
 .side-bar-header {
@@ -27,7 +27,7 @@
   color: white;
   font-size: 10px;
   padding: 10px;
-  margin-left: 170px;
+  margin-left: 18vw;
   border: 1px solid papayawhip;
   border-radius: 5px;
   text-decoration: none;
@@ -53,6 +53,7 @@
   font-size: 16px;
   height: 5vh;
   width: 25vw;
+  text-align: center;
 }
 
 .pick-products {
@@ -63,47 +64,13 @@
 .guid-text {
   margin: 10px 0;
 }
-.product-1-name {
+.product-name-box-on-side-bar {
+  background-color: #ffffe0;
   font-size: 16px;
   height: 5vh;
   width: 25vw;
   border: 1px solid black;
-  padding: 10px;
-  margin-bottom: 10px;
-}
-
-.product-2-name {
-  font-size: 16px;
-  height: 5vh;
-  width: 25vw;
-  border: 1px solid black;
-  padding: 10px;
-  margin-bottom: 10px;
-}
-
-.product-3-name {
-  font-size: 16px;
-  height: 5vh;
-  width: 25vw;
-  border: 1px solid black;
-  padding: 10px;
-  margin-bottom: 10px;
-}
-
-.product-4-name {
-  font-size: 16px;
-  height: 5vh;
-  width: 25vw;
-  border: 1px solid black;
-  padding: 10px;
-  margin-bottom: 10px;
-}
-
-.product-5-name {
-  font-size: 16px;
-  height: 5vh;
-  width: 25vw;
-  border: 1px solid black;
+  border-radius: 5px;
   padding: 10px;
   margin-bottom: 10px;
 }
@@ -129,7 +96,7 @@
 
 /* 料理一覧*/
 .materials-all {
-  width: calc(100vw - 300px);
+  width: calc(100vw - 30vw);
 }
 
 .guid-header {
@@ -152,7 +119,7 @@
   padding: 10px;
 }
 /* 料理の画像と名前 */
-.materials-wrapper {
+.products-wrapper {
   width: 100vw;
   display: flex;
   flex-wrap: wrap;
@@ -160,36 +127,24 @@
   padding: 10px;
 }
 
-.material {
+.product {
   color: black;
   width: 200px;
   position: relative;
 }
 
-.material-image-wrapper {
+.product-image-wrapper {
   position: relative;
 }
 
-#material-id {
+.product-id {
   display: none;
   position: absolute;
     top: 70px;
     left: 70px;
 }
 
-.more-list {
-  position: absolute;
-  bottom: 20px;
-  right: 20px;
-}
-
-.edit-material,
-.destroy-material {
-  color: white;
-  text-decoration: none;
-}
-
-.material-name {
+.product-name {
   font-size: 14px;
   width: 100%;
   text-align: center;

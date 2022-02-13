@@ -1,6 +1,13 @@
+.catch-copy {
+  color: #ff570d;
+  background-color: papayawhip;
+  height: 20px;
+  padding: 0 20px;
+}
+
 .index-header {
   background-color: yellowgreen;
-  height: 100px;
+  height: calc(100px - 20px);
   width: 100vw; 
   display: flex;
   justify-content: space-between;
@@ -58,6 +65,7 @@
 .product {
   color: black;
   width: 200px;
+  margin: 0 10px;
 }
 
 .product-image-wrapper {
@@ -68,8 +76,8 @@
   color: white;
   text-decoration: none;
   position: absolute;
-  bottom: 20px;
-  right: 20px;
+  right: 10px;
+  bottom: 10px;
 }
 
 .product-name {

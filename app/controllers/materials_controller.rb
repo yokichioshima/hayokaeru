@@ -23,6 +23,7 @@ class MaterialsController < ApplicationController
   def update
     material = Material.find(params[:id])
     material.update(material_params)
+    redirect_to action: :index
   end
 
   def destroy
@@ -33,6 +34,6 @@ class MaterialsController < ApplicationController
   private
 
   def material_params
-    params.permit(:name, :image, :category_id, :price, :options)
+    params.require(:material).permit(:name, :image, :category_id, :price, :options)
   end
 end

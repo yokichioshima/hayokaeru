@@ -19,11 +19,10 @@
       <div class='guid-text'>献立 <span class='indispensable'>必須(最大5品)</span></div>
       <div class='pick-products'>
         <% 5.times do |i| %>
-          <div class='product-<%= i + 1 %>-name'></div>
-          <input name='product_<%= i + 1 %>' type='hidden' class='input-product-<%= i+1 %>' >
+          <div class='product-name-box-on-side-bar' id='product-<%= i + 1 %>-name'></div>
+          <input name='product_<%= i + 1 %>' type='hidden' class='input-product-form' id='input-product-<%= i+1 %>' >
         <% end %>
       </div>
-        <%# javascriptのイベント発火により、ここに使用する食材のid情報を挿入する  %>
       <div class='input-btn-contents'>
         <label class='input-post'>
           <p class='post-text'>登録する</p>
