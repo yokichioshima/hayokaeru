@@ -23,10 +23,6 @@
   padding:10px;
 }
 
-.header-btn-wrapper {
-  margin-top: 15px;
-}
-
 .header-btn {
   color: white;
   font-size: 10px;
@@ -53,56 +49,30 @@
   text-align: center;
 }
 
-.guid-text {
+.input-order-name {
   font-size: 16px;
-}
-
-.click-upload {
-  display: block;
-  font-size: 16px;
-  height: 30px;
-  width: 180px;
-  margin: 10px auto;
-  border-radius: 5px;
-  padding-top: 2px;
-  color: white;
-  text-decoration: none;
-  background-color: #228B22;
-}
-
-.image-btn {
-  display: none;
-}
-
-.input-form {
-  font-size: 16px;
+  height: 5vh;
   width: 25vw;
-  border: 1px solid grey;
-  border-radius: 4px;
-  padding: 16px 16px 8px;
   text-align: center;
+}
+
+.pick-products {
+  border: none;
   margin: 10px 0;
 }
 
-#pick-materials {
-  font-size: 16px;
-  border: 1px solid grey;
-  border-radius: 4px;
-  padding: 25px;
+.guid-text {
   margin: 10px 0;
 }
-
-#input-material-ids {
-
-}
-
-.options-form {
+.product-name-box-on-side-bar {
+  background-color: #ffffe0;
   font-size: 16px;
+  height: 5vh;
   width: 25vw;
-  border: 1px solid grey;
-  border-radius: 4px;
-  padding: 30px;
-  margin: 10px 0;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
 }
 
 .input-post {
@@ -124,7 +94,7 @@
 /* 入力フォーム */
 
 
-/* 食材一覧*/
+/* 料理一覧*/
 .materials-all {
   width: calc(100vw - 30vw);
 }
@@ -148,8 +118,8 @@
   border-bottom: 1px solid lightslategray;
   padding: 10px;
 }
-/* 食材の画像と名前 */
-.materials-wrapper {
+/* 料理の画像と名前 */
+.products-wrapper {
   width: 100vw;
   display: flex;
   flex-wrap: wrap;
@@ -157,39 +127,27 @@
   padding: 10px;
 }
 
-.material {
+.product {
   color: black;
   width: 200px;
   position: relative;
 }
 
-.material-image-wrapper {
+.product-image-wrapper {
   position: relative;
 }
 
-.material-id {
+.product-id {
   display: none;
   position: absolute;
     top: 70px;
     left: 70px;
 }
 
-.more-list {
-  position: absolute;
-  bottom: 20px;
-  right: 20px;
-}
-
-.edit-material,
-.destroy-material {
-  color: white;
-  text-decoration: none;
-}
-
-.material-name {
+.product-name {
   font-size: 14px;
   width: 100%;
   text-align: center;
 }
-/* 食材の画像と名前 */
-/* 食材一覧 */
+/* 料理の画像と名前 */
+/* 料理一覧 */

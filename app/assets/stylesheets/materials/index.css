@@ -1,79 +1,96 @@
-.wrapper {
-  height: 100vh;
-  width: 100vw;
+.catch-copy {
+  color: #ff570d;
+  background-color: papayawhip;
+  height: 20px;
+  padding: 0 20px;
 }
 
-.header {
-  height: 10vh;
-  width: 100vw;
+.material-index-header {
+  background-color: #ff773e;
+  height: calc(100px - 20px);
+  width: 100vw; 
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
+  padding: 0 20px;
 }
 
-.header-btns {
-  justify-content: space-around;
+.material-index-page-title {
+  font-size: 18px;
+  display: inline-block;
+  border-bottom: 5px solid papayawhip;
+  padding:10px;
 }
 
-h1 {
-  font-size: 3vh;
+.material-index-header-btns {
+  width: 70vw;
+  display: flex;
 }
 
-.header-btn {
-  color: black;
+.material-index-header-btn {
+  color: white;
+  font-size: 16px;
   text-decoration: none;
-  border: 1px solid pink;
-  padding: 2px 2px;
+  margin-left: 30px;
+  padding: 0 20px;
+  border: 1px solid papayawhip;
+  border-radius: 5px;
 }
 
-.main {
-  height: calc(100vh - 10vh);
+/* 食材一覧 */
+.materials-display {
+  background-color: transparent;
+  height: calc(100vh - 100px);
   width: 100vw;
-  background-color: pink;
+  padding: 46px 20px 10px;
   overflow: scroll;
 }
 
 .category-name {
-  height: 5vh;
-  width: 100vw;
+  font-size: 16px;
   text-align: left;
   border-top: 1px dotted lightslategray;
   border-bottom: 1px solid lightslategray;
-  padding: 0px 5px;
+  padding: 10px;
 }
-
+/* 食材の画像と名前 */
 .materials-wrapper {
-  height: max-content;
   width: 100vw;
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
+  padding: 10px;
 }
 
 .material {
-  height: 25vh;
-  width: cal(100vw / 3 - 3vw);
-  border: none;
-  padding: 5px;
+  color: black;
+  width: 200px;
+  margin: 0 10px;
 }
 
-.material-image {
-  height: 90%;
-  width: 100%;
+.material-image-wrapper {
+  position: relative;
 }
 
-.text {
-  display:flex;
-  justify-content: space-around; 
+.manipulate-list {
+  color: white;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+}
+
+.edit-material {
+  margin-right: 10px;
 }
 
 .material-name {
-  height: 2vh;
-  width: 50%;
+  font-size: 14px;
+  width: 100%;
+  text-align: center;
 }
-
-.more-list {
-  width:50%;
-  display: flex;
-  justify-content: space-around;
-}
+/* 食材の画像と名前*/
+/* 食材一覧*/

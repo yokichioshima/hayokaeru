@@ -1,7 +1,7 @@
 <div class='product'>
   <div class='product-image-wrapper'>
+    <div class="product-id" id='product-<%= product.id %>' aria-hidden='true'><%= product.id %></div> 
     <%= image_tag product.image.variant(resize: '200x200'), class:'product-image' if product.image.attached? %> 
-    <%= link_to '詳細', product_path(product.id), class:'show-product' %>
   </div>
   <div class='product-name'>
     <%= product.name %>

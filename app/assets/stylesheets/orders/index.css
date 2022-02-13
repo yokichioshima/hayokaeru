@@ -1,5 +1,6 @@
 .catch-copy {
-  background-color: transparent;
+  color: #ff570d;
+  background-color: papayawhip;
   height: 20px;
   padding: 0 20px;
 }
@@ -14,7 +15,7 @@
 }
 
 .app-title {
-  color: #cc3300;
+  color: black;
   font-size: 30px;
   font-family: 'Londrina Shadow', cursive;
 }

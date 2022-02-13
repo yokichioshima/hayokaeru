@@ -1,12 +1,12 @@
-function getMaterialIds (){
+function readyForGettingMaterialIds (){
   const materialElements = document.querySelectorAll(".material");
   const pickMaterials = document.getElementById("pick-materials");
   
 
   materialElements.forEach(function(list) {
     list.addEventListener('click', function(){
-      const materialId = list.querySelector("#material-id");
       const materialName = list.querySelector(".material-name");
+      const materialId = list.querySelector(".material-id");
       const htmlPickMaterialNames = `
         <b id="${materialName.innerHTML}">
           ${materialName.innerHTML}
@@ -20,4 +20,4 @@ function getMaterialIds (){
   });
 };
 
-window.addEventListener('load', getMaterialIds);
+window.addEventListener('load', readyForGettingMaterialIds);
