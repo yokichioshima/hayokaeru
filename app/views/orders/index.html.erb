@@ -18,7 +18,7 @@
       <div class='order-name'>
         <%= order.name %>
       </div>
-      <% oreder.products.each do |product| %>
+      <% order.products.each do |product| %>
         <div class='top-page-material-wrapper'>
           <%= image_tag material.image.variant(resize: '200x200'), class:'material-image' if material.image.attached? %>
           <div class='material-name'>
