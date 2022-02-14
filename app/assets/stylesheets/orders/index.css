@@ -67,9 +67,50 @@
   border: 1px solid papayawhip;
   border-radius: 5px;
 }
-.top-page-infomations-wrapper {
+
+.top-page-orders-wrapper {
   background-color: transparent;
   height: calc(100vh - 300px);
   width: 100vw;
   padding: 0 20px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.order-wrapper {
+  margin-top: 10px;
+  margin-right: 10px;
+  border: 1px solid pink;
+  border-radius: 10px;
+  padding: 10px;
+  height: max-content;
+}
+
+.order-name {
+  font-size: 16px;
+  text-align: center;
+}
+
+.manipulate-order-btns-wrapper {
+  text-align: right;
+  margin-top: 10px;
+  margin-bottom: 0px;
+}
+
+.destroy-order-wrapper {
+  margin-top: 15px;
+  margin-bottom: 2px;
+}
+
+.edit-order,
+.destroy-order {
+  color: white;
+  text-decoration: none;
+  background-color: yellowgreen;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.top-page-product-wrapper {
+  padding-top: 20px;
 }

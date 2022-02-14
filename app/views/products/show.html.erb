@@ -6,7 +6,7 @@
 </div>
 
 <div class='show-information-wrapper'>
-  <%= image_tag @product.image.variant(resize: '400x400'), class:'product-image' if @product.image.attached? %>
+  <%= image_tag @product.image.variant(resize: '400x400'), class:'product-show-image' if @product.image.attached? %>
   <div class='product-name-wrapper'>
     <%= @product.name %>
   </div>

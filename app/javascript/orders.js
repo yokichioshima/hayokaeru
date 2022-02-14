@@ -1,23 +1,20 @@
 /* 料理画像クリックイベント発火動作定義 */
 const inputProductByClickingImage = (products, nameBoxes, inputForms) => {
-  products.forEach(function(list) {
-    list.addEventListener('click', () => {
-      const productName = list.querySelector(".product-name");
-      const productId = list.querySelector(".product-id");
-
-      for (let i = 1; i <= 5; i++) {
-        if (nameBoxes[i - 1].innerHTML == productName.innerHTML || inputForms[i - 1].value == productId.innerHTML) {
-          nameBoxes[i - 1].innerHTML = "";
-          inputForms[i - 1].value = "";
+  products.forEach(function(product) {
+    product.addEventListener('click', () => {
+      for (let i = 0; i < 5; i++) {
+        if (nameBoxes[i].innerHTML == product.querySelector(".product-name").innerHTML || 
+        inputForms[i].value == product.querySelector(".product-id").innerHTML) {
+          nameBoxes[i].innerHTML = "";
+          inputForms[i].value = "";
           return false;
         };
       };
-
-      for (let i = 1; i <= 5; i++) {
-        if (nameBoxes[i - 1].innerHTML == "" && inputForms[i - 1].value == "" ) {
-          nameBoxes[i - 1].innerHTML = productName.innerHTML;
-          inputForms[i - 1].value = productId.innerHTML;
-          break;
+      for (let i = 0; i < 5; i++) {
+        if (nameBoxes[i].innerHTML == "" && inputForms[i].value == "" ) {
+          nameBoxes[i].innerHTML = product.querySelector(".product-name").innerHTML;
+          inputForms[i].value = product.querySelector(".product-id").innerHTML;
+          return false;
         };
       };
     });
@@ -66,9 +63,9 @@ function readyForGettingProductIds () {
   "input-product-4", "input-product-5"];
   let nameBoxes = [];
   let inputForms = [];
-  for (let i = 1; i <= 5; i++) {
-    nameBoxes[i - 1]= document.getElementById(nameBoxIds[i - 1]);
-    inputForms[i - 1] = document.getElementById(inputFormIds[i - 1]);
+  for (let i = 0; i < 5; i++) {
+    nameBoxes[i]= document.getElementById(nameBoxIds[i]);
+    inputForms[i] = document.getElementById(inputFormIds[i]);
   };
   /* 料理idを入力するフォーム、料理名表示BOX取得 */
 

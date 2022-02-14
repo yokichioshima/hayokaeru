@@ -1,5 +1,5 @@
 <div class='catch-copy'>
-  買い物を見通しよく
+  食材把握ツール
 </div>
 <div class='top-page-header'>
   <div class='app-title'>
@@ -12,12 +12,20 @@
     <%= link_to '食材一覧', materials_path, class: 'move-to-material-index' %>
   </div>
 </div>
-<div class='top-page-infomations-wrapper'>
+<div class='top-page-orders-wrapper'>
   <% @orders.each do |order| %>
-    <div class='oreder-wrapper'>
+    <div class='order-wrapper'>
       <div class='order-name'>
         <%= order.name %>
       </div>
+      <ul class='manipulate-order-btns-wrapper'>
+        <li>
+          <%= link_to '編集', edit_order_path(order.id), class:'edit-order' %>
+        </li>
+        <li class='destroy-order-wrapper'>
+          <%= link_to '削除', order_path(order.id), method: :delete, data: { confirm: '削除しますか？' }, class:'destroy-order' %>
+        </li>
+      </ul>
       <% order.products.each do |product| %>
         <div class='top-page-product-wrapper'>
           <%= image_tag product.image.variant(resize: '200x200'), class:'product-image' if product.image.attached? %>
