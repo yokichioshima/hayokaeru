@@ -9,7 +9,6 @@ class OrdersController < ApplicationController
   end
 
   def create
-    binding.pry
     @order = Order.new(order_params)
     if @order.save
       redirect_to root_path
@@ -20,6 +19,6 @@ class OrdersController < ApplicationController
 
   private
   def order_params
-    params.permit(:name, :product_1_id, :product_2_id, :product_3_id, :product_4_id, :product_5_id)
+    params.permit(:name, product_ids: [])
   end
 end

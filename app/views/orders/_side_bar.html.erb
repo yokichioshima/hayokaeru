@@ -20,7 +20,7 @@
       <div class='pick-products'>
         <% 5.times do |i| %>
           <div class='product-name-box-on-side-bar' id='product-<%= i + 1 %>-name'></div>
-          <input name='product_<%= i + 1 %>_id' type='hidden' class='input-product-form' id='input-product-<%= i+1 %>' >
+          <input name='[product_ids][]' type='hidden' class='input-product-form' id='input-product-<%= i+1 %>' >
         <% end %>
       </div>
       <div class='input-btn-contents'>
