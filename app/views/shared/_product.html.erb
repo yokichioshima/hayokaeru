@@ -4,7 +4,7 @@
     <%= image_tag product.image.variant(resize: '200x200'), class:'product-image' if product.image.attached? %> 
     <%= link_to '詳細', product_path(product.id), class:'show-product' %>
   </div>
-  <div class='product-name'>
+  <div class='product-name' id='product-name'>
     <%= product.name %>
   </div>
 </div>

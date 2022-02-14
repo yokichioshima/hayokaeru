@@ -9,18 +9,18 @@
 </div> 
 
 <div class='form'>
-
+<%# 献立登録用 %>
   <% if params[:"controller"] == "orders" && params[:"action"] == "new" %>
     <h2 class='orders-sell-title'>情報を入力してください</h2>
     <%= form_with url: "/orders", method: :post, local: true do |form| %>
       <div class='guid-text'>献立の名前 <span class='indispensable'>必須</span></div>
       <%= form.text_field :name, class:"input-order-name" %>
-      <% form.text_field :name, class:'order-name' %>
       <div class='guid-text'>献立 <span class='indispensable'>必須(最大5品)</span></div>
       <div class='pick-products'>
         <% 5.times do |i| %>
           <div class='product-name-box-on-side-bar' id='product-<%= i + 1 %>-name'></div>
-          <input name='[product_ids][]' type='hidden' class='input-product-form' id='input-product-<%= i+1 %>' >
+          <input name='[product_ids][]' type='hidden' class='input-product-form' 
+          id='input-product-<%= i+1 %>' >
         <% end %>
       </div>
       <div class='input-btn-contents'>
@@ -31,21 +31,23 @@
       </div>
     <% end %>
   <% end %>
+<%# 献立登録用 %>
 
+<%# 献立編集用 %>
   <% if params[:"controller"] == "orders" && params[:"action"] == "edit" %>
-    <h2 class='orders-sell-title'>料理を変更してください</h2>
+    <h2 class='orders-sell-title'>内容を変更してください</h2>
     <%= form_with url: order_path(@order.id), model: @order, method: :put, local: true do |form| %>
-      <div id='pick-materials'>
-        <% @product.materials.each do |material| %>
-          <b id='<% material.name %>'>
-            <%= material.name %>
-          </b>
+      <div class='guid-text'>献立の名前 <span class='indispensable'>必須</span></div>
+      <%= form.text_field :name, class: "input-order-name", value: @order.name %>
+      <div class='guid-text'>献立 <span class='indispensable'>必須(最大5品)</span></div>
+      <div id='pick-products'>
+        <% products = @order.products %>
+        <% 5.times do |i| %>
+          <div class='product-name-box-on-side-bar' id='product-<%= i + 1 %>-name'><%= products[i].name if products[i] != nil %></div>
+          <input name='[product_ids][]' type='hidden' class='input-product-form'
+           id='input-product-<%= i+1 %>' value="<%= products[i].id if products[i] != nil %>" >
         <% end %>
       </div>
-      <% @product.materials.each do |material| %>
-        <input name="[material_ids][]" type="hidden" class="input-form" id=<%= material.id %>  value=<%= material.id %> > 
-      <% end %>
-        <%# javascriptのイベント発火により、ここに使用する食材のid情報を挿入する  %>
       <div class='input-btn-contents'>
         <label class='input-post'>
           <p class='post-text'>変更する</p>
@@ -54,5 +56,5 @@
       </div>
     <% end %>
   <% end %>
-
+<%# 献立編集用 %>
 </div>
