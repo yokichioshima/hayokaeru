@@ -6,7 +6,7 @@
 }
 
 .material-new-header {
-  background-color: #ff773e;
+  background-color: palevioletred;
   height: calc(100px - 20px);
   width: 100vw;
   display: flex;

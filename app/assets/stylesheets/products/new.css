@@ -6,12 +6,14 @@
 /* サイドヘッダー */
 .side-bar {
   height: 100vh;
-  width: 30vw;
+  width: 280px;
 }
 
 .side-bar-header {
   background-color: yellowgreen;
-  height: 110px;
+  display: flex;
+  align-items: center;
+  height: 80px;
   padding: 0 15px;
 }
 
@@ -20,18 +22,19 @@
   font-size: 18px;
   display: inline-block;
   border-bottom: 5px solid papayawhip;
-  padding:10px;
+  margin-bottom: 30px;
 }
 
-.header-btn-wrapper {
-  margin-top: 15px;
+.side-header-btn-wrapper {
+  width: 60px;
+  margin: 0 0 0 auto;
 }
 
-.header-btn {
+.side-header-btn {
   color: white;
   font-size: 10px;
+  width: 50px;
   padding: 10px;
-  margin-left: 18vw;
   border: 1px solid papayawhip;
   border-radius: 5px;
   text-decoration: none;
@@ -41,7 +44,7 @@
 /* 入力フォーム */
 .form {
   background-color: papayawhip;
-  height: calc(100vh - 110px);
+  height: calc(100vh - 80px);
   padding: 0 20px;
   text-align: center;
   overflow: scroll;
@@ -67,7 +70,7 @@
   padding-top: 2px;
   color: white;
   text-decoration: none;
-  background-color: #228B22;
+  background-color: green;
 }
 
 .image-btn {
@@ -76,7 +79,7 @@
 
 .input-form {
   font-size: 16px;
-  width: 25vw;
+  width: 200px;
   border: 1px solid grey;
   border-radius: 4px;
   padding: 16px 16px 8px;
@@ -86,10 +89,11 @@
 
 #pick-materials {
   font-size: 16px;
+  width: 200px;
   border: 1px solid grey;
   border-radius: 4px;
   padding: 25px;
-  margin: 10px 0;
+  margin: 0 auto;
 }
 
 #input-material-ids {
@@ -98,7 +102,7 @@
 
 .options-form {
   font-size: 16px;
-  width: 25vw;
+  width: 200px;
   border: 1px solid grey;
   border-radius: 4px;
   padding: 30px;
@@ -150,6 +154,7 @@
 }
 /* 食材の画像と名前 */
 .materials-wrapper {
+  min-height: 200px;
   width: 100vw;
   display: flex;
   flex-wrap: wrap;

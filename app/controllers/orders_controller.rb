@@ -37,6 +37,10 @@ class OrdersController < ApplicationController
     redirect_to root_path
   end
 
+  def tally
+    @orders = Order.includes(products: :materials)
+  end
+
   private
   def order_params
     params.permit(:name, product_ids: [])

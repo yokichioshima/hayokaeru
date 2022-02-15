@@ -5,11 +5,11 @@
   <div class='app-title'>
     Matelist
   </div>
-  <div class='move-btns-wrapper'>    
-    <%= link_to '買い物リスト', '#',class: 'move-to-shopping-list' %>    
-    <%= link_to '献立登録', new_order_path, class: 'move-to-order-new' %>
-    <%= link_to '料理一覧', products_path, class: 'move-to-product-index' %>
-    <%= link_to '食材一覧', materials_path, class: 'move-to-material-index' %>
+  <div class='top-page-header-btns-wrapper'>    
+    <%= link_to '買い物リスト', tally_orders_path, class: 'top-page-header-btn' %>    
+    <%= link_to '献立登録', new_order_path, class: 'top-page-header-btn' %>
+    <%= link_to '料理一覧', products_path, class: 'top-page-header-btn' %>
+    <%= link_to '食材一覧', materials_path, class: 'top-page-header-btn' %>
   </div>
 </div>
 <div class='top-page-orders-wrapper'>

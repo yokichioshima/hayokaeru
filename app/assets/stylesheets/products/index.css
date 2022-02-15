@@ -23,16 +23,19 @@
 }
 
 .index-header-btns {
-  width: 70vw;
+  width: 310px;
   display: flex;
+  color: white;
+  font-size: 16px;
+  margin: 0 0 0 auto;
 }
 
 .index-header-btn {
   color: white;
   font-size: 16px;
   text-decoration: none;
-  margin-left: 30px;
-  padding: 0 20px;
+  margin-left: 15px;
+  padding: 0 10px;
   border: 1px solid papayawhip;
   border-radius: 5px;
 }
@@ -55,6 +58,7 @@
 }
 /* 料理の画像と名前 */     
 .products-wrapper {
+  min-height: 200px;
   width: 100vw;
   display: flex;
   flex-wrap: wrap;
