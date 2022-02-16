@@ -1,0 +1,43 @@
+.catch-copy {
+  color: #ff570d;
+  background-color: papayawhip;
+  height: 20px;
+  padding: 0 20px;
+}
+
+.order-tally-header {
+  background-color: #c3d825;
+  height: calc(100px - 20px);
+  padding: 0 20px;
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.order-tally-title {
+  font-size: 20px;
+}
+
+.order-tally-header-btns-wrapper {
+  width: 220px;
+  display: flex;
+  margin: 0 0 0 auto;
+}
+
+.order-tally-header-btn {
+  color: white;
+  font-size: 16px;
+  text-decoration: none;
+  margin-left: 15px;
+  padding: 0 10px;
+  border: 1px solid papayawhip;
+  border-radius: 5px;
+}
+
+.order-tally-info-wrapper {
+  background-color: transparent;
+  height: calc(100vh - 100px);
+  width: 100vw;
+  padding: 46px 20px 10px;
+  overflow: scroll;
+}

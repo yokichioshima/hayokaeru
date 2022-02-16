@@ -22,7 +22,7 @@ const inputProductByClickingImage = (products, nameBoxes, inputForms) => {
 };
 /* 料理画像クリックイベント発火動作定義 */
 
-/* サイドバー料理名の位置の入れ替え */
+/* サイドバー料理名,id入力欄の入れ替え */
 const swapStringPlaces = (nameBoxes, inputForms) =>  {
   let boxId;
   let formId;
@@ -49,7 +49,7 @@ const swapStringPlaces = (nameBoxes, inputForms) =>  {
     });
   });
 };
-/* サイドバー料理名の位置の入れ替え */
+/* サイドバー料理名、id入力欄の入れ替え */
 
 function readyForGettingProductIds () {
   /* 入力情報元の要素取得 */

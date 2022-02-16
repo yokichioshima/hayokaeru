@@ -21,44 +21,15 @@
 }
 
 
-.move-btns-wrapper {
-  width: 43vw;
+.top-page-header-btns-wrapper {
+  width: 310px;
   display: flex;
   color: white;
   font-size: 16px;
+  margin-right: 0 0 0 auto;
 }
 
-.move-to-shopping-list {
-  color: white;
-  font-size: 16px;
-  text-decoration: none;
-  margin-left: 15px;
-  padding: 0 10px;
-  border: 1px solid papayawhip;
-  border-radius: 5px;
-}
-
-.move-to-order-new {
-  color: white;
-  font-size: 16px;
-  text-decoration: none;
-  margin-left: 15px;
-  padding: 0 10px;
-  border: 1px solid papayawhip;
-  border-radius: 5px;
-}
-
-.move-to-product-index {
-  color: white;
-  font-size: 16px;
-  text-decoration: none;
-  margin-left: 15px;
-  padding: 0 10px;
-  border: 1px solid papayawhip;
-  border-radius: 5px;
-}
-
-.move-to-material-index {
+.top-page-header-btn {
   color: white;
   font-size: 16px;
   text-decoration: none;

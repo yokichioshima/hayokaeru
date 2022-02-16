@@ -6,7 +6,7 @@
 }
 
 .material-index-header {
-  background-color: #ff773e;
+  background-color: palevioletred;
   height: calc(100px - 20px);
   width: 100vw; 
   display: flex;
@@ -22,17 +22,18 @@
   padding:10px;
 }
 
-.material-index-header-btns {
-  width: 70vw;
+.material-index-header-btns-wrapper {
+  width: 310px;
   display: flex;
+  margin: 0 0 0 auto;
 }
 
 .material-index-header-btn {
   color: white;
   font-size: 16px;
   text-decoration: none;
-  margin-left: 30px;
-  padding: 0 20px;
+  margin-left: 15px;
+  padding: 0 10px;
   border: 1px solid papayawhip;
   border-radius: 5px;
 }
@@ -55,6 +56,7 @@
 }
 /* 食材の画像と名前 */
 .materials-wrapper {
+  min-height: 200px;
   width: 100vw;
   display: flex;
   flex-wrap: wrap;
