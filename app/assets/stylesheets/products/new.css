@@ -2,7 +2,6 @@
   display: flex;
 }
 
-
 /* サイドヘッダー */
 .side-bar {
   height: 100vh;
@@ -26,17 +25,16 @@
 }
 
 .side-header-btn-wrapper {
-  width: 60px;
+  width: 55px;
   margin: 0 0 0 auto;
-}
+  border: 1px solid papayawhip;
+  border-radius: 5px;
+  text-align: center;
+} 
 
 .side-header-btn {
   color: white;
   font-size: 10px;
-  width: 50px;
-  padding: 10px;
-  border: 1px solid papayawhip;
-  border-radius: 5px;
   text-decoration: none;
 }
 /* サイドヘッダー */
@@ -84,7 +82,7 @@
   border-radius: 4px;
   padding: 16px 16px 8px;
   text-align: center;
-  margin: 10px 0;
+  margin: 5px 0;
 }
 
 #pick-materials {
