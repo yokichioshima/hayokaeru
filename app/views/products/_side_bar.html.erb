@@ -84,9 +84,7 @@
       </div>
       <div id='pick-materials'>
         <% @product.materials.each do |material| %>
-          <b id='<% material.name %>'>
-            <%= material.name %>
-          </b>
+          <div id='<%= material.name %>'><%= material.name %></div>
         <% end %>
       </div>
       <% @product.materials.each do |material| %>

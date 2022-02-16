@@ -6,7 +6,6 @@ const inputMaterialByClickingImage = (materials, pickMaterials) => {
       const materialId = material.querySelector(".material-id");
       const inputNameBox = document.getElementById(`${materialName.innerHTML}`);
       const inputForm = document.getElementById(`${materialId.innerHTML}`);
-      debugger;
       if ( inputNameBox != null || inputForm != null ) {
         inputNameBox.remove();
         inputForm.remove();
