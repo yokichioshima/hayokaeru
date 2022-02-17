@@ -1,7 +1,7 @@
 <h2 class='material-sell-title'>食材の情報を入力</h2>
 <div class='form-wrapper'>
 
-  <% if params[:"controller"] == "materials" && params[:"action"] == "new" %>
+  <% if params[:"controller"] == "materials" && ( params[:"action"] == "new" || params[:"action"] == "create" )%>
   <%= form_with url: "/materials", model: @material, method: :post, local: true do |form| %>
     <div class='img-upload'>
       <div class='guid-text'>
@@ -40,7 +40,7 @@
   <% end %>
   <% end %>
 
-  <% if params[:"controller"] == "materials" && params[:"action"] == "edit" %>
+  <% if params[:"controller"] == "materials" && ( params[:"action"] == "edit" || params[:"action"] == "update" ) %>
   <%= form_with url: "/materials/#{@material.id}", model: @material, method: :put, local: true do |form| %>
     <div class='img-upload'>
       <div class='guid-text'>

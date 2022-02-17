@@ -1,7 +1,7 @@
 <div class='side-bar-header'>
   <div class='page-title'>
-    <%= "料理を登録する" if params[:"controller"] == "products" && params[:"action"] == "new" %>
-    <%= "料理を編集する" if params[:"controller"] == "products" && params[:"action"] == "edit" %>
+    <%= "料理を登録する" if params[:"controller"] == "products" && ( params[:"action"] == "new" || params[:"action"] == "create" ) %>
+    <%= "料理を編集する" if params[:"controller"] == "products" && ( params[:"action"] == "edit" || params[:"action"] == "update") %>
   </div>
   <div class='side-header-btn-wrapper'>
     <a href="/products" class='side-header-btn'>料理一覧<br>へ戻る</a> 
@@ -10,10 +10,10 @@
 
 <div class='form'>
 
-  <% if params[:"controller"] == "products" && params[:"action"] == "new" %>
+  <% if params[:"controller"] == "products" && ( params[:"action"] == "new" || params[:"action"] == "create" ) %>
     <h2 class='product-sell-title'>情報を入力してください</h2>
 
-    <%= form_with url: "/products", method: :post, local: true do |form| %>
+    <%= form_with(model: @product, local: true) do |form| %>
       <div class='img-upload'>
         <div class='guid-text'>
           料理画像
@@ -54,7 +54,7 @@
     <% end %>
   <% end %>
 
-  <% if params[:"controller"] == "products" && params[:"action"] == "edit" %>
+  <% if params[:"controller"] == "products" && ( params[:"action"] == "edit" || params[:"action"] == "update" ) %>
     <h2 class='product-sell-title'>情報を変更してください</h2>
 
     <%= form_with url: product_path(@product.id), model: @product, method: :put, local: true do |form| %>
@@ -88,7 +88,7 @@
         <% end %>
       </div>
       <% @product.materials.each do |material| %>
-        <input name="[material_ids][]" type="hidden" class="input-form" id=<%= material.id %>  value=<%= material.id %> > 
+        <input name="product[material_ids][]" type="hidden" class="input-form" id=<%= material.id %>  value=<%= material.id %> > 
       <% end %>
         <%# javascriptのイベント発火により、ここに使用する食材のid情報を挿入する  %>
       <div class='guid-text'>

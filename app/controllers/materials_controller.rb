@@ -21,9 +21,12 @@ class MaterialsController < ApplicationController
   end
 
   def update
-    material = Material.find(params[:id])
-    material.update(material_params)
-    redirect_to action: :index
+    @material = Material.find(params[:id])
+    if @material.update(material_params)
+      redirect_to action: :index
+    else
+      render :edit
+    end
   end
 
   def destroy

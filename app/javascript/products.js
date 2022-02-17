@@ -15,7 +15,7 @@ const inputMaterialByClickingImage = (materials, pickMaterials) => {
           ${materialName.innerHTML}
         </div>`;
       const htmlPickMaterialIds = `
-        <input name="[material_ids][]" type="hidden" class="input-form" id="${materialId.innerHTML}" value=${materialId.innerHTML} > 
+        <input name="product[material_ids][]" type="hidden" class="input-form" id="${materialId.innerHTML}" value=${materialId.innerHTML} > 
         `;  
       pickMaterials.insertAdjacentHTML("beforeend", htmlPickMaterialNames);
       pickMaterials.insertAdjacentHTML("afterend", htmlPickMaterialIds);
