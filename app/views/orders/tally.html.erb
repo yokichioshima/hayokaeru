@@ -12,6 +12,7 @@
 </div>
 <div class='order-tally-info-wrapper'>
   <% materials = [] %>
+  <%# <% quantities = {} %> 
   <% @orders.each do |order| %>
     <% order.products.each do |product|%>
       <% product.materials.each do |material| %>

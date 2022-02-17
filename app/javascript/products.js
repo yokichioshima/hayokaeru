@@ -11,8 +11,9 @@ const inputMaterialByClickingImage = (materials, pickMaterials) => {
         inputForm.remove();
       } else {
       const htmlPickMaterialNames = `
-        <div id="${materialName.innerHTML}">
-          ${materialName.innerHTML}
+        <div class="material-name-box" id="${materialName.innerHTML}">
+          ${materialName.innerHTML}<input name="[single_quantities][]" class="input-quantity-form" 
+          id="quantity-${materialId.innerHTML}" >
         </div>`;
       const htmlPickMaterialIds = `
         <input name="product[material_ids][]" type="hidden" class="input-form" id="${materialId.innerHTML}" value=${materialId.innerHTML} > 

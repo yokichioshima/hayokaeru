@@ -43,7 +43,7 @@
     </div>
     <div id='pick-materials'>
     </div>
-        <%# javascriptのイベント発火により、ここに使用する食材のid情報を挿入する  %>
+      <%# javascriptのイベント発火により、ここに使用する食材のid情報を挿入する  %>
     <div class='guid-text'>
       メモ
     </div>
@@ -87,7 +87,8 @@
     </div>
     <div id='pick-materials'>
       <% @product.materials.each do |material| %>
-        <div id='<%= material.name %>'><%= material.name %></div>
+        <div id='<%= material.name %>'><%= material.name %><input name="[single_quantities][]" class="input-quantity-form" 
+          id="quantity-<%= material.id %>" ></div>
       <% end %>
     </div>
     <% @product.materials.each do |material| %>
