@@ -32,6 +32,7 @@ class MaterialsController < ApplicationController
   def destroy
     material = Material.find(params[:id])
     material.destroy
+    redirect_to action: :index
   end
 
   private
