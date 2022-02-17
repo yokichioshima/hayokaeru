@@ -1,7 +1,7 @@
 <div class='order-side-bar-header'>
   <div class='page-title'>
-    <%= "献立を組み立てる" if params[:"controller"] == "orders" && params[:"action"] == "new" %>
-    <%= "献立を編集する" if params[:"controller"] == "orders" && params[:"action"] == "edit" %>
+    <%= "献立を組み立てる" if params[:"controller"] == "orders" && ( params[:"action"] == "new" || params[:"action"] == "create" ) %>
+    <%= "献立を編集する" if params[:"controller"] == "orders" && ( params[:"action"] == "edit" || params[:"action"] == "update" ) %>
   </div>
   <div class='header-btn-wrapper'>
     <a href='/' class='header-btn'>献立一覧<br>へ戻る</a>
@@ -10,16 +10,16 @@
 
 <div class='form'>
 <%# 献立登録用 %>
-  <% if params[:"controller"] == "orders" && params[:"action"] == "new" %>
+  <% if params[:"controller"] == "orders" && ( params[:"action"] == "new" || params[:"action"] == "create" ) %>
     <h2 class='orders-sell-title'>情報を入力してください</h2>
-    <%= form_with url: "/orders", method: :post, local: true do |form| %>
+    <%= form_with(model: @order, local: true) do |form| %>
       <div class='guid-text'>献立の名前 <span class='indispensable'>必須</span></div>
       <%= form.text_field :name, class:"input-order-name" %>
       <div class='guid-text'>献立 <span class='indispensable'>必須(最大5品)</span></div>
       <div class='pick-products'>
         <% 5.times do |i| %>
           <div class='product-name-box-on-side-bar' id='product-<%= i + 1 %>-name'></div>
-          <input name='[product_ids][]' type='hidden' class='input-product-form' 
+          <input name='order[product_ids][]' type='hidden' class='input-product-form' 
           id='input-product-<%= i+1 %>' >
         <% end %>
       </div>
@@ -34,7 +34,7 @@
 <%# 献立登録用 %>
 
 <%# 献立編集用 %>
-  <% if params[:"controller"] == "orders" && params[:"action"] == "edit" %>
+  <% if params[:"controller"] == "orders" && ( params[:"action"] == "edit" || params[:"action"] == "update" ) %>
     <h2 class='orders-sell-title'>内容を変更してください</h2>
     <%= form_with url: order_path(@order.id), model: @order, method: :put, local: true do |form| %>
       <div class='guid-text'>献立の名前 <span class='indispensable'>必須</span></div>
@@ -44,7 +44,7 @@
         <% products = @order.products %>
         <% 5.times do |i| %>
           <div class='product-name-box-on-side-bar' id='product-<%= i + 1 %>-name'><%= products[i].name if products[i] != nil %></div>
-          <input name='[product_ids][]' type='hidden' class='input-product-form'
+          <input name='order[product_ids][]' type='hidden' class='input-product-form'
            id='input-product-<%= i+1 %>' value="<%= products[i].id if products[i] != nil %>" >
         <% end %>
       </div>

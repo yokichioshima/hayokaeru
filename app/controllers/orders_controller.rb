@@ -13,7 +13,8 @@ class OrdersController < ApplicationController
     if @order.save
       redirect_to root_path
     else
-      redirect_to action: :new
+      @products = Product.all
+      render :new
     end
   end
 
@@ -27,7 +28,8 @@ class OrdersController < ApplicationController
     if @order.update(order_params)
       redirect_to root_path
     else
-      redirect_to action: :edit
+      @products = Product.all
+      render :edit
     end
   end
 
@@ -43,6 +45,6 @@ class OrdersController < ApplicationController
 
   private
   def order_params
-    params.permit(:name, product_ids: [])
+    params.require(:order).permit(:name, product_ids: [])
   end
 end

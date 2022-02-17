@@ -17,7 +17,8 @@ class ProductsController < ApplicationController
     if @product.save
       redirect_to action: :index
     else
-      redirect_to action: :new
+      @materials = Material.all
+      render :new
     end
   end
 
@@ -31,7 +32,8 @@ class ProductsController < ApplicationController
     if @product.update(product_params)
       redirect_to action: :show
     else
-      redirect_to action: :edit
+      @materials = Material.all
+      render :edit
     end
   end
 
@@ -43,7 +45,7 @@ class ProductsController < ApplicationController
   private
 
   def product_params
-    params.permit(:name, :image, :sort_id, :options, material_ids: [], single_quantities: [])
+    params.require(:product).permit( :name, :image, :sort_id, :options, material_ids: [])
   end
 
   def single_quantities_pamams
