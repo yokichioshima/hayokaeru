@@ -36,7 +36,7 @@ ActiveRecord::Schema.define(version: 2022_02_14_002742) do
   create_table "materials", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
     t.integer "category_id", null: false
-    t.integer "price"
+    t.string "quantity_unit", null: false
     t.string "options"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

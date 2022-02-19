@@ -40,7 +40,7 @@ class OrdersController < ApplicationController
   end
 
   def tally
-    @orders = Order.includes(products: :materials)
+    @orders = Order.includes(products: :materials, products: :product_materials)
   end
 
   private

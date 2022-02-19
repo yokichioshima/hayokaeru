@@ -88,7 +88,7 @@
     <div id='pick-materials'>
       <% @product.materials.each do |material| %>
         <div id='<%= material.name %>'><%= material.name %><input name="[single_quantities][]" class="input-quantity-form" 
-          id="quantity-<%= material.id %>" ></div>
+          id="quantity-<%= material.id %>" value=<%= @product_materials.select{|hash| hash.material_id == material.id}[0].single_quantity %> ></div>
       <% end %>
     </div>
     <% @product.materials.each do |material| %>
