@@ -95,6 +95,7 @@
 }
 
 .material-name-box {
+  display: flex;
  justify-content: space-between;
 }
 
@@ -180,6 +181,10 @@
   position: absolute;
     top: 70px;
     left: 70px;
+}
+
+.material-quantity-unit {
+  display: none;
 }
 
 .more-list {

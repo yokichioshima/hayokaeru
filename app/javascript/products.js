@@ -1,9 +1,10 @@
 /* 食材画像クリックイベント発火動作定義 */
-const inputMaterialByClickingImage = (materials, pickMaterials) => {
+const inputMaterialByClickingImage = (materials, pickMaterials, guidTextOptions) => {
   materials.forEach(function(material) {
     material.addEventListener('click', function(){
       const materialName = material.querySelector(".material-name");
       const materialId = material.querySelector(".material-id");
+      const materialQuantityUnit = material.querySelector(".material-quantity-unit");
       const inputNameBox = document.getElementById(`${materialName.innerHTML}`);
       const inputForm = document.getElementById(`${materialId.innerHTML}`);
       if ( inputNameBox != null || inputForm != null ) {
@@ -13,13 +14,13 @@ const inputMaterialByClickingImage = (materials, pickMaterials) => {
       const htmlPickMaterialNames = `
         <div class="material-name-box" id="${materialName.innerHTML}">
           ${materialName.innerHTML}<input name="[single_quantities][]" class="input-quantity-form" 
-          id="quantity-${materialId.innerHTML}" >
+          id="quantity-${materialId.innerHTML}" ><div class="material-quantity-unit-on-form">${materialQuantityUnit.innerHTML}</div>
         </div>`;
       const htmlPickMaterialIds = `
         <input name="product[material_ids][]" type="hidden" class="input-form" id="${materialId.innerHTML}" value=${materialId.innerHTML} > 
         `;  
       pickMaterials.insertAdjacentHTML("beforeend", htmlPickMaterialNames);
-      pickMaterials.insertAdjacentHTML("afterend", htmlPickMaterialIds);
+      guidTextOptions.insertAdjacentHTML("beforebegin", htmlPickMaterialIds);
       };
     });
   });
@@ -63,7 +64,9 @@ function readyForGettingMaterialIds (){
   const pickMaterials = document.getElementById("pick-materials");
   /* 食材名表示BOX取得 */
 
-  inputMaterialByClickingImage(materials, pickMaterials);
+  const guidTextOptions = document.getElementById("guid-text-options");
+
+  inputMaterialByClickingImage(materials, pickMaterials, guidTextOptions);
 };
   
 window.addEventListener('load', readyForGettingMaterialIds);
