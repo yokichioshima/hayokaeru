@@ -1,6 +1,7 @@
       <div class='material'>
         <div class='material-image-wrapper'>
           <div class="material-id" id='material-<%= material.id %>' aria-hidden='true'><%= material.id %></div> 
+          <div class="material-quantity-unit" id='material-<%= material.quantity_unit %>' aria-hidden='true'><%= material.quantity_unit %></div>
           <%= image_tag material.image.variant(resize: '200x200'), class:'material-image' if material.image.attached? %>
           <ul class='manipulate-list' >
             <li>
@@ -10,5 +11,5 @@
               <%= link_to '削除', material_path(material.id), method: :delete, data: { confirm: '削除しますか？' }, class:'destroy-material' if params[:"controller"] == "materials" && params[:"action"] == "index" %>
             </li>
         </div>
-        <div class='material-name' id='material-name'><%= material.name %></div>
+        <div class='material-name' id='material-name'><%= material.name %><%= quantities[material.id] if params[:"action"] == "tally" %><%= material.quantity_unit %></div>
       </div>

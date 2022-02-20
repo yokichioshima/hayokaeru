@@ -90,12 +90,18 @@
   width: 200px;
   border: 1px solid grey;
   border-radius: 4px;
-  padding: 25px;
+  padding: 20px;
   margin: 0 auto;
 }
 
-#input-material-ids {
+.material-name-box {
+  display: flex;
+ justify-content: space-between;
+}
 
+.input-quantity-form {
+  width: 50px;
+  margin: 0 0 0 auto;
 }
 
 .options-form {
@@ -175,6 +181,10 @@
   position: absolute;
     top: 70px;
     left: 70px;
+}
+
+.material-quantity-unit {
+  display: none;
 }
 
 .more-list {

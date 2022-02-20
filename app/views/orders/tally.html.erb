@@ -12,10 +12,13 @@
 </div>
 <div class='order-tally-info-wrapper'>
   <% materials = [] %>
+  <% quantities = {} %> 
   <% @orders.each do |order| %>
-    <% order.products.each do |product|%>
+    <% order.products.each do |product| %>
       <% product.materials.each do |material| %>
         <% materials << material %>
+        <% quantities[material.id] = 0 if quantities[material.id] == nil %>
+        <% quantities[material.id] += product.product_materials.select{ |hash| hash.material_id == material.id }[0].single_quantity %>
       <% end %>
     <% end %>
   <% end %>
@@ -24,49 +27,49 @@
   <div class='category-name'>肉類・魚類・大豆製品</div>
   <div class='materials-wrapper'>
     <% materials.select{|material| material.category_id == 2}.each do |material| %>
-      <%= render partial: 'shared/material', locals: { material: material } %>
+      <%= render partial: 'shared/material', locals: { material: material, quantities: quantities } %>
     <% end %>
   </div>
   <div class='category-name'>乳製品・海藻・小魚類</div>
   <div class='materials-wrapper'>
     <% materials.select{|material| material.category_id == 3}.each do |material| %>
-      <%= render partial: 'shared/material', locals: { material: material } %>
+      <%= render partial: 'shared/material', locals: { material: material, quantities: quantities} %>
     <% end %>
   </div>
   <div class='category-name'>緑黄色野菜</div>
   <div class='materials-wrapper'>
     <% materials.select{|material| material.category_id == 4}.each do |material| %>
-      <%= render partial: 'shared/material', locals: { material: material } %>
+      <%= render partial: 'shared/material', locals: { material: material, quantities: quantities } %>
     <% end %>
   </div>
   <div class='category-name'>淡色野菜・果物</div>
   <div class='materials-wrapper'>
     <% materials.select{|material| material.category_id == 5}.each do |material| %>
-      <%= render partial: 'shared/material', locals: { material: material } %>
+      <%= render partial: 'shared/material', locals: { material: material, quantities: quantities } %>
     <% end %>
   </div>
   <div class='category-name'>穀類・芋類・砂糖類</div>
   <div class='materials-wrapper'>
     <% materials.select{|material| material.category_id == 6}.each do |material| %>
-      <%= render partial: 'shared/material', locals: { material: material } %>
+      <%= render partial: 'shared/material', locals: { material: material, quantities: quantities } %>
     <% end %>
   </div>
   <div class='category-name'>油脂類</div>
   <div class='materials-wrapper'>
     <% materials.select{|material| material.category_id == 7}.each do |material| %>
-      <%= render partial: 'shared/material', locals: { material: material } %>
+      <%= render partial: 'shared/material', locals: { material: material, quantities: quantities } %>
     <% end %>
   </div>
   <div class='category-name'>調味料</div>
   <div class='materials-wrapper'>
     <% materials.select{|material| material.category_id == 8}.each do |material| %>
-      <%= render partial: 'shared/material', locals: { material: material } %>
+      <%= render partial: 'shared/material', locals: { material: material, quantities: quantities } %>
     <% end %>
   </div>
     <div class='category-name'>その他</div>
   <div class='materials-wrapper'>
     <% materials.select{|material| material.category_id == 9}.each do |material| %>
-      <%= render partial: 'shared/material', locals: { material: material } %>
+      <%= render partial: 'shared/material', locals: { material: material, quantities: quantities } %>
     <% end %>
   </div>
 </div>

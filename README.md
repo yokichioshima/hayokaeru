@@ -76,7 +76,7 @@ https://gyazo.com/3ecd7b3dbb32d3d75788c0fe5e974db8
 以下の３点を工夫した。  
 - 画像をクリックする操作により、登録、編集、削除をできるようにした点
 - 献立登録の際に、サイドバーの料理名の順番をスワップ操作により入れ替えるようにした点
-- 食材は食料品店での展示場所を考慮して分類して表示し、料理は、作成者の主観であるが、一汁三菜に沿って分類した。なお、食材や料理をどの項目に配置するかは、編集機能によって、ユーザー自身が変更できる。
+- 食材ごとに分量の単位を登録することができ、買い物リストでは、購入する食材とその分量まで表示される。
 
 # テーブル設計
 
@@ -84,9 +84,8 @@ https://gyazo.com/3ecd7b3dbb32d3d75788c0fe5e974db8
 | Column                 | Type    | Options                           |
 | ---------------------- | ------- | --------------------------------- |
 | name                   | string  | null: false                       |
-| category_id            | integer  | null: false       
-|
-| price                  | integer |                        |
+| category_id            | integer  | null: false                       |
+| quantity_unit          | string  |null: false                       |
 | options                | string  | 
 |                 
 
