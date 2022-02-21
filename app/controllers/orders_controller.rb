@@ -1,4 +1,6 @@
 class OrdersController < ApplicationController
+  before_action :set_order, only: [:edit, :update]
+  
   def index
     @orders = Order.all
   end
@@ -19,12 +21,10 @@ class OrdersController < ApplicationController
   end
 
   def edit
-    @order = Order.find(params[:id])
     @products = Product.all
   end
 
   def update
-    @order = Order.find(params[:id])
     if @order.update(order_params)
       redirect_to root_path
     else
@@ -46,5 +46,9 @@ class OrdersController < ApplicationController
   private
   def order_params
     params.require(:order).permit(:name, product_ids: [])
+  end
+
+  def set_order
+    @order = Order.find(params[:id])
   end
 end

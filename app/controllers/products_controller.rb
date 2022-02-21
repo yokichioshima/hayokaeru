@@ -1,10 +1,11 @@
 class ProductsController < ApplicationController
+  before_action :set_product, only: [:show, :edit, :update]
+
   def index
     @products = Product.all
   end
 
   def show
-    @product = Product.find(params[:id])
   end
 
   def new
@@ -27,13 +28,11 @@ class ProductsController < ApplicationController
   end
 
   def edit
-    @product = Product.find(params[:id])
     @materials = Material.all
     @product_materials = ProductMaterial.where(product_id: @product.id)
   end
 
   def update
-    @product = Product.find(params[:id])
     if @product.update(product_params)
       @product.product_materials.each_with_index do |product_material, i|
         product_material.single_quantity = single_quantities_params[:single_quantities][i]
@@ -60,5 +59,9 @@ class ProductsController < ApplicationController
 
   def single_quantities_params
     params.permit(single_quantities: [])
+  end
+
+  def set_product
+    @product = Product.find(params[:id])
   end
 end
