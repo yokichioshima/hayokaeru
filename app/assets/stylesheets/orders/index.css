@@ -1,17 +1,23 @@
-.catch-copy {
+.top-page-catch-copy {
   color: #ff570d;
   background-color: papayawhip;
+  width: 100vw;
   height: 20px;
   padding: 0 20px;
+  position: fixed;
+  top: 0;
 }
 
 .top-page-header {
   background-color: yellowgreen;
   height: calc(100px - 20px);
+  width: 100vw;
   padding: 0 20px;
   display:flex;
   justify-content: space-between;
   align-items: center;
+  position: fixed;
+  top: 20px;
 }
 
 .app-title {
@@ -41,11 +47,12 @@
 
 .top-page-orders-wrapper {
   background-color: transparent;
-  height: calc(100vh - 300px);
+  height: calc(100vh - 100px);
   width: 100vw;
   padding: 0 20px;
   display: flex;
   justify-content: flex-start;
+  margin-top:100px;
 }
 
 .order-wrapper {
