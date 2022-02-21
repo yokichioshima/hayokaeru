@@ -1,4 +1,6 @@
 class MaterialsController < ApplicationController
+  before_action :set_material, only: [:edit, :update]
+
   def index
     @materials = Material.all
   end
@@ -17,11 +19,9 @@ class MaterialsController < ApplicationController
   end
 
   def edit
-    @material = Material.find(params[:id])
   end
 
   def update
-    @material = Material.find(params[:id])
     if @material.update(material_params)
       redirect_to action: :index
     else
@@ -38,6 +38,10 @@ class MaterialsController < ApplicationController
   private
 
   def material_params
-    params.require(:material).permit(:name, :image, :category_id, :price, :options)
+    params.require(:material).permit(:name, :image, :category_id, :quantity_unit, :options)
+  end
+
+  def set_material
+    @material = Material.find(params[:id])
   end
 end
