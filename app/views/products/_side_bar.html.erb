@@ -17,6 +17,8 @@
   <h2 class='product-sell-title'>情報を入力してください</h2>
 
   <%= form_with(model: @product, local: true) do |form| %>
+    <%= render 'layouts/error_messages', model: @product %>
+
     <div class='img-upload'>
       <div class='guid-text'>
         料理画像
@@ -61,6 +63,8 @@
   <h2 class='product-sell-title'>情報を変更してください</h2>
 
   <%= form_with url: product_path(@product.id), model: @product, method: :put, local: true do |form| %>
+    <%= render 'layouts/error_messages', model: @product %>
+
     <div class='img-upload'>
       <div class='guid-text'>
         料理画像
