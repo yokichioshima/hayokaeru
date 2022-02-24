@@ -41,6 +41,7 @@ class ProductsController < ApplicationController
       redirect_to action: :show
     else
       @materials = Material.all
+      @product_materials = ProductMaterial.where(product_id: @product.id)
       render :edit
     end
   end
