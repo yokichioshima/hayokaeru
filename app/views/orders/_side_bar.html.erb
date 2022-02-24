@@ -17,6 +17,7 @@
 <% if params[:"action"] == "new" || params[:"action"] == "create" %>
   <h2 class='orders-sell-title'>情報を入力してください</h2>
   <%= form_with(model: @order, local: true) do |form| %>
+    <%= render 'layouts/error_messages', model: @order %>
     <div class='guid-text'>献立の名前 <span class='indispensable'>必須</span></div>
     <%= form.text_field :name, class:"input-order-name" %>
     <div class='guid-text'>献立 <span class='indispensable'>必須(最大5品)</span></div>
@@ -41,6 +42,7 @@
 <% if params[:"action"] == "edit" || params[:"action"] == "update" %>
   <h2 class='orders-sell-title'>内容を変更してください</h2>
   <%= form_with url: order_path(@order.id), model: @order, method: :put, local: true do |form| %>
+    <%= render 'layouts/error_messages', model: @order %>
     <div class='guid-text'>献立の名前 <span class='indispensable'>必須</span></div>
     <%= form.text_field :name, class: "input-order-name", value: @order.name %>
     <div class='guid-text'>献立 <span class='indispensable'>必須(最大5品)</span></div>

@@ -1,0 +1,14 @@
+ja:
+  activerecord:
+    attributes:
+      material:
+        image: 食材画像
+        name: 食材名
+        category_id: 基礎食品群
+        quantity_unit: 分量の単位
+      product:
+        image: 料理画像
+        name: 料理名
+        sort_id: 分類
+      order:
+        name: 献立の名前
