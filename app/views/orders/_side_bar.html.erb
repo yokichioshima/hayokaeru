@@ -20,6 +20,7 @@
     <h2 class='orders-sell-title'>内容を変更してください</h2>
   <% end %>
   <%= form_with(model: @order, local: true) do |form| %>
+    <%= render 'layouts/error_messages', model: @order %>
     <div class='guid-text'>献立の名前 <span class='indispensable'>必須</span></div>
     <%= form.text_field :name, class:"input-order-name" %>
     <div class='guid-text'>献立 <span class='indispensable'>必須(最大5品)</span></div>
@@ -33,12 +34,12 @@
     <div class='input-btn-contents'>
       <label class='input-post'>
         <% if params[:"action"] == "new" || params[:"action"] == "create" %>
-        <p class='post-text'>登録する</p>
-        <%= form.submit '登録する', class: 'input-btn' %>
+          <p class='post-text'>登録する</p>
+          <%= form.submit '登録する', class: 'input-btn' %>
         <% end %>
         <% if params[:"action"] == "edit" || params[:"action"] == "update" %>
-        <p class='post-text'>変更する</p>
-        <%= form.submit '変更する', class: 'input-btn' %>
+          <p class='post-text'>変更する</p>
+          <%= form.submit '変更する', class: 'input-btn' %>
         <% end %>
       </label>
     </div>

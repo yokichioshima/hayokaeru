@@ -1,6 +1,7 @@
 <h2 class='material-sell-title'>食材の情報を入力</h2>
 <div class='form-wrapper'>
    <%= form_with model: @material, local: true do |form| %>
+   <%= render 'layouts/error_messages', model: @material %>
     <div class='img-upload'>
       <div class='guid-text'>
         食材画像
@@ -35,7 +36,6 @@
           <p class='post-text'>登録する</p>
           <%= form.submit '登録する', class: 'input-btn' %>
         <% end %>
-
         <% if params[:"action"] == "edit" || params[:"action"] == "update" %>
           <p class='post-text'>変更する</p>
           <%= form.submit '変更する', class: 'input-btn' %>

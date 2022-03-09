@@ -4,7 +4,7 @@ class Product < ApplicationRecord
 
   validates :image, presence: true
   validates :name, presence: true
-  validates :sort_id, numericality: { other_than: 1, message: "can't be blank" }
+  validates :sort_id, numericality: { other_than: 1, message: "を入力してください" }
 
   has_one_attached :image
   has_many :product_materials, dependent: :destroy

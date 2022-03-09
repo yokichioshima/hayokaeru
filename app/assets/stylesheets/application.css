@@ -22,6 +22,10 @@ body {
   font-family: monospace;
 }
 
+.error-alert {
+  color: tomato;
+}
+
 /**
  * YUI 3.5.0 - reset.css (http://developer.yahoo.com/yui/3/cssreset/)
  * https://cssreset.com/
