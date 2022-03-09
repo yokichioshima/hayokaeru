@@ -1,5 +1,6 @@
 class ProductsController < ApplicationController
-  before_action :set_product, only: [:show, :edit, :update]
+  before_action :set_product, only: [:show, :edit, :update, :destroy]
+  before_action :set_material_all, only: [:new, :edit]
 
   def index
     @products = Product.all
@@ -10,15 +11,13 @@ class ProductsController < ApplicationController
 
   def new
     @product = Product.new
-    @materials = Material.all
   end
 
   def create
     @product = Product.new(product_params)
     if @product.save
       @product.product_materials.each_with_index do |product_material, i|
-        product_material.single_quantity = single_quantities_params[:single_quantities][i]
-        product_material.save
+        product_material.save_single_quantity(single_quantities_params[:single_quantities][i])
       end
       redirect_to action: :index
     else
@@ -28,27 +27,24 @@ class ProductsController < ApplicationController
   end
 
   def edit
-    @materials = Material.all
     @product_materials = ProductMaterial.where(product_id: @product.id)
   end
 
   def update
     if @product.update(product_params)
       @product.product_materials.each_with_index do |product_material, i|
-        product_material.single_quantity = single_quantities_params[:single_quantities][i]
-        product_material.save
+        product_material.save_single_quantity(single_quantities_params[:single_quantities][i])
       end
       redirect_to action: :show
     else
       @materials = Material.all
-      @product_materials = ProductMaterial.where(product_id: @product.id)
+      @product_materials = @product.product_materials
       render :edit
     end
   end
 
   def destroy
-    product = Product.find(params[:id])
-    product.destroy
+    @product.destroy
     redirect_to action: :index
   end
 
@@ -64,5 +60,9 @@ class ProductsController < ApplicationController
 
   def set_product
     @product = Product.find(params[:id])
+  end
+
+  def set_material_all
+    @materials = Material.all
   end
 end

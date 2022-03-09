@@ -1,13 +1,13 @@
 class OrdersController < ApplicationController
-  before_action :set_order, only: [:edit, :update]
-  
+  before_action :set_order, only: [:edit, :update, :destroy]
+  before_action :set_product_all, only: [:new, :edit]
+
   def index
     @orders = Order.all
   end
 
   def new
     @order = Order.new
-    @products = Product.all
   end
 
   def create
@@ -21,7 +21,6 @@ class OrdersController < ApplicationController
   end
 
   def edit
-    @products = Product.all
   end
 
   def update
@@ -34,12 +33,11 @@ class OrdersController < ApplicationController
   end
 
   def destroy
-    order = Order.find(params[:id])
-    order.destroy
+    @order.destroy
     redirect_to root_path
   end
 
-  def tally
+  def show_summary
     @orders = Order.includes(products: :materials, products: :product_materials)
   end
 
@@ -50,5 +48,9 @@ class OrdersController < ApplicationController
 
   def set_order
     @order = Order.find(params[:id])
+  end
+
+  def set_product_all
+    @products = Product.all
   end
 end
