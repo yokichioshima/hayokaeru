@@ -25,10 +25,11 @@
   <% materials = materials.uniq %>
 
   <% for i in 2..9 do %>
-    <div class='category-name'><%=Category.data[i - 1][:name] %></div>
+    <div class='category-name'><%= Category.data[i - 1][:name] %></div>
     <div class='materials-wrapper'>
       <% materials.select{|material| material.category_id == i}.each do |material| %>
         <%= render partial: 'shared/material', locals: { material: material, quantities: quantities } %>
       <% end %>
     </div>
   <% end %>
+</div>

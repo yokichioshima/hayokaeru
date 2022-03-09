@@ -1,9 +1,7 @@
 <h2 class='material-sell-title'>食材の情報を入力</h2>
 <div class='form-wrapper'>
-
-  <% if params[:"action"] == "new" || params[:"action"] == "create" %>
-  <%= form_with url: "/materials", model: @material, method: :post, local: true do |form| %>
-    <%= render 'layouts/error_messages', model: @material %>
+   <%= form_with model: @material, local: true do |form| %>
+   <%= render 'layouts/error_messages', model: @material %>
     <div class='img-upload'>
       <div class='guid-text'>
         食材画像
@@ -34,51 +32,15 @@
     <%= form.text_area :options, class: 'material-options', placeholder: '255文字まで記述可能です' %>
     <div class='input-btn-contents'>
       <label class='input-post'>
-        <p class='post-text'>登録する</p>
-        <%= form.submit '登録する', class: 'input-btn' %>
+        <% if params[:"action"] == "new" || params[:"action"] == "create" %>
+          <p class='post-text'>登録する</p>
+          <%= form.submit '登録する', class: 'input-btn' %>
+        <% end %>
+        <% if params[:"action"] == "edit" || params[:"action"] == "update" %>
+          <p class='post-text'>変更する</p>
+          <%= form.submit '変更する', class: 'input-btn' %>
+        <% end %>
       </label>
     </div>
-  <% end %>
-  <% end %>
-
-  <% if params[:"action"] == "edit" || params[:"action"] == "update" %>
-  <%= form_with url: "/materials/#{@material.id}", model: @material, method: :put, local: true do |form| %>
-    <%= render 'layouts/error_messages', model: @material %>
-    <div class='img-upload'>
-      <div class='guid-text'>
-        食材画像
-        <span class='indispensable'>（必須）</span>
-      </div>
-      <label class='click-upload'>
-        <p class='upload-text'>画像をアップロード</p>
-        <%= form.file_field :image, class: 'image-btn', id: 'material-image' %>
-      </label>
-    </div>
-    <div class='guid-text'>
-      食材名
-      <span class='indispensable'>（必須）</span>
-    </div>
-    <%= form.text_field :name, class: 'material-text' %>
-    <div class='guid-text'>
-      基礎食品群
-      <span class='indispensable'>（必須）</span>
-    </div>
-    <%= form.collection_select(:category_id, Category.all, :id, :name, {}, {class: 'material-text'}) %>
-    <div class='guid-text'>
-      分量の単位（必須)
-    </div>
-    <%= form.text_field :quantity_unit, class: 'material-text', placeholder: 'g, ml, 個, 合など' %>
-    <div class='guid-text'>
-      メモ
-    </div>
-    <%= form.text_area :options, class: 'material-options', placeholder: '255文字まで記述可能です' %>
-    <div class='input-btn-contents'>
-      <label class='input-post'>
-        <p class='post-text'>変更する</p>
-        <%= form.submit '登録する', class: 'input-btn' %>
-      </label>
-    </div>
-  <% end %>
-  <% end %>
+  <% end %>      
 </div>
-
