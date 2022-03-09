@@ -14,5 +14,5 @@
             </ul>
           <% end %>
         </div>
-        <div class='material-name' id='material-name'><%= material.name %><%= quantities[material.id] if params[:"action"] == "tally" %><%= material.quantity_unit %></div>
+        <div class='material-name' id='material-name'><%= material.name %><% if params[:"action"] == "tally" %><%= quantities[material.id]%><%= material.quantity_unit  %><% end %></div>
       </div>

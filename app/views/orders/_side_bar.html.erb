@@ -13,9 +13,12 @@
 </div> 
 
 <div class='form'>
-<%# 献立登録用 %>
-<% if params[:"action"] == "new" || params[:"action"] == "create" %>
-  <h2 class='orders-sell-title'>情報を入力してください</h2>
+  <% if params[:"action"] == "new" || params[:"action"] == "create" %>
+    <h2 class='orders-sell-title'>情報を入力してください</h2>
+  <% end %>
+  <% if params[:"action"] == "edit" || params[:"action"] == "update" %>
+    <h2 class='orders-sell-title'>内容を変更してください</h2>
+  <% end %>
   <%= form_with(model: @order, local: true) do |form| %>
     <div class='guid-text'>献立の名前 <span class='indispensable'>必須</span></div>
     <%= form.text_field :name, class:"input-order-name" %>
@@ -29,36 +32,15 @@
     </div>
     <div class='input-btn-contents'>
       <label class='input-post'>
+        <% if params[:"action"] == "new" || params[:"action"] == "create" %>
         <p class='post-text'>登録する</p>
         <%= form.submit '登録する', class: 'input-btn' %>
-      </label>
-    </div>
-  <% end %>
-<% end %>
-<%# 献立登録用 %>
-
-<%# 献立編集用 %>
-<% if params[:"action"] == "edit" || params[:"action"] == "update" %>
-  <h2 class='orders-sell-title'>内容を変更してください</h2>
-  <%= form_with url: order_path(@order.id), model: @order, method: :put, local: true do |form| %>
-    <div class='guid-text'>献立の名前 <span class='indispensable'>必須</span></div>
-    <%= form.text_field :name, class: "input-order-name", value: @order.name %>
-    <div class='guid-text'>献立 <span class='indispensable'>必須(最大5品)</span></div>
-    <div id='pick-products'>
-      <% products = @order.products %>
-      <% 5.times do |i| %>
-        <div class='product-name-box-on-side-bar' id='product-<%= i + 1 %>-name'><%= products[i].name if products[i] != nil %></div>
-        <input name='order[product_ids][]' type='hidden' class='input-product-form'
-        id='input-product-<%= i+1 %>' value="<%= products[i].id if products[i] != nil %>" >
-      <% end %>
-    </div>
-    <div class='input-btn-contents'>
-      <label class='input-post'>
+        <% end %>
+        <% if params[:"action"] == "edit" || params[:"action"] == "update" %>
         <p class='post-text'>変更する</p>
         <%= form.submit '変更する', class: 'input-btn' %>
+        <% end %>
       </label>
     </div>
   <% end %>
-<% end %>
-<%# 献立編集用 %>
 </div>
