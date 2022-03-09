@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   root to: 'orders#index'
   resources :orders, except: :show do
     collection do
-      get 'tally'
+      get 'show_summary'
     end
   end
 end

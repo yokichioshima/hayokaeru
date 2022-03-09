@@ -3,4 +3,9 @@ class ProductMaterial < ApplicationRecord
 
   belongs_to :material
   belongs_to :product
+
+  def save_single_quantity(product_material, single_quantity)
+    product_material.single_quantity = single_quantity
+    product_material.save
+  end
 end

@@ -1,5 +1,5 @@
 class MaterialsController < ApplicationController
-  before_action :set_material, only: [:edit, :update]
+  before_action :set_material, only: [:edit, :update, :destroy]
 
   def index
     @materials = Material.all
@@ -30,8 +30,7 @@ class MaterialsController < ApplicationController
   end
 
   def destroy
-    material = Material.find(params[:id])
-    material.destroy
+    @material.destroy
     redirect_to action: :index
   end
 
