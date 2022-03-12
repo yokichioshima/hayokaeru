@@ -1,5 +1,8 @@
 module OrdersHelper
-  def collect_materials(orders, materials, quantities)
+  # 献立に使用されている食材と分量をそれぞれ配列に格納する
+  def collect_materials(orders)
+    materials = []
+    quantities = {}
     orders.each do |order| 
       order.products.each do |product| 
         product.materials.each do |material| 
@@ -9,7 +12,7 @@ module OrdersHelper
         end 
       end 
     end 
-    materials = materials.uniq 
+    materials = materials.uniq
     return materials, quantities
   end
 end

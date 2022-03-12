@@ -11,14 +11,15 @@
   </div>
 </div>
 <div class='order-tally-info-wrapper'>
-  <% materials = [] %>
-  <% quantities = {} %>  
-  <% collect_materials(@orders, materials, quantities) %>
+  <% materials_quantities = collect_materials(@orders) %>
+  <% materials = materials_quantities[0] %>
+  <% quantities = materials_quantities[1] %>
   <% for i in 2..9 do %>
     <div class='category-name'><%= Category.data[i - 1][:name] %></div>
     <div class='materials-wrapper'>
       <% materials.select{|material| material.category_id == i}.each do |material| %>
-        <%= render partial: 'shared/material', locals: { material: material, quantities: quantities } %>
+        <% quantity = quantities[material.id] %>
+        <%= render partial: 'shared/material', locals: { material: material, quantity: quantity } %>
       <% end %>
     </div>
   <% end %>
