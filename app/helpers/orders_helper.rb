@@ -1,5 +1,5 @@
 module OrdersHelper
-  def sum_up(orders, materials, quantities)
+  def collect_materials(orders, materials, quantities)
     orders.each do |order| 
       order.products.each do |product| 
         product.materials.each do |material| 

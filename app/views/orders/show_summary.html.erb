@@ -13,7 +13,7 @@
 <div class='order-tally-info-wrapper'>
   <% materials = [] %>
   <% quantities = {} %>  
-  <% sum_up(@orders, materials, quantities) %>
+  <% collect_materials(@orders, materials, quantities) %>
   <% for i in 2..9 do %>
     <div class='category-name'><%= Category.data[i - 1][:name] %></div>
     <div class='materials-wrapper'>
