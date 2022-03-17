@@ -17,7 +17,7 @@ class ProductsController < ApplicationController
     @product = Product.new(product_params)
     if @product.save
       @product.product_materials.each_with_index do |product_material, i|
-        product_material.save_single_quantity(single_quantities_params[:single_quantities][i])
+        product_material.save_single_quantity(product_material, single_quantities_params[:single_quantities][i])
       end
       redirect_to action: :index
     else
@@ -33,7 +33,7 @@ class ProductsController < ApplicationController
   def update
     if @product.update(product_params)
       @product.product_materials.each_with_index do |product_material, i|
-        product_material.save_single_quantity(single_quantities_params[:single_quantities][i])
+        product_material.save_single_quantity(product_material, single_quantities_params[:single_quantities][i])
       end
       redirect_to action: :show
     else
