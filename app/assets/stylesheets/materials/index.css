@@ -13,6 +13,8 @@
   justify-content: space-between;
   align-items: center;
   padding: 0 20px;
+  position: fixed;
+  z-index: 500;
 }
 
 .material-index-page-title {
@@ -45,6 +47,7 @@
   width: 100vw;
   padding: 46px 20px 10px;
   overflow: scroll;
+  z-index: 0;
 }
 
 .category-name {
