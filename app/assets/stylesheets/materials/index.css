@@ -1,3 +1,9 @@
+.material-index-header {
+  height: 100px;
+  position: fixed;
+  top: 0;
+}
+
 .catch-copy {
   color: #ff570d;
   background-color: papayawhip;
@@ -5,7 +11,7 @@
   padding: 0 20px;
 }
 
-.material-index-header {
+.material-index-header-main {
   background-color: palevioletred;
   height: calc(100px - 20px);
   width: 100vw; 
@@ -13,8 +19,6 @@
   justify-content: space-between;
   align-items: center;
   padding: 0 20px;
-  position: fixed;
-  z-index: 500;
 }
 
 .material-index-page-title {
@@ -47,7 +51,6 @@
   width: 100vw;
   padding: 46px 20px 10px;
   overflow: scroll;
-  z-index: 0;
 }
 
 .category-name {
