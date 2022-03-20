@@ -1,4 +1,4 @@
-.material-index-header {
+.materials-index-header {
   height: 100px;
   position: fixed;
   top: 0;
@@ -12,7 +12,7 @@
   padding: 0 20px;
 }
 
-.material-index-header-main {
+.materials-index-header-main {
   background-color: palevioletred;
   height: calc(100px - 20px);
   width: 100vw; 
@@ -22,20 +22,20 @@
   padding: 0 20px;
 }
 
-.material-index-page-title {
+.materials-index-page-title {
   font-size: 18px;
   display: inline-block;
   border-bottom: 5px solid papayawhip;
   padding:10px;
 }
 
-.material-index-header-btns-wrapper {
+.materials-index-header-btns-wrapper {
   width: 310px;
   display: flex;
   margin: 0 0 0 auto;
 }
 
-.material-index-header-btn {
+.materials-index-header-btn {
   color: white;
   font-size: 16px;
   text-decoration: none;
@@ -51,7 +51,7 @@
   height: calc(100vh - 100px);
   width: 100vw;
   padding: 10px 20px;
-  margin-top: 80px;
+  margin-top: 60px;
   overflow: scroll;
   z-index: 0;
 }

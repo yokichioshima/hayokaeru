@@ -1,17 +1,19 @@
-<div class='catch-copy'>
-  買い物を見通しよく
-</div>
-<div class='index-header'>
-  <div class='index-page-title'>
-    料理一覧
+<div class='products-index-header'>
+  <div class='catch-copy'>
+    買い物を見通しよく
   </div>
-  <div class='index-header-btns'>
-    <a href="/products/new" class='index-header-btn'>料理登録</a>
-    <a href="/materials" class='index-header-btn'>食材一覧</a>
-    <a href="/" class='index-header-btn'>献立一覧</a>
-    <a href="/orders/show_summary" class='index-header-btn'>買い物リスト</a>
+  <div class='products-index-header-main'>
+    <div class='products-index-page-title'>
+      料理一覧
+    </div>
+    <div class='products-index-header-btns-wrapper'>
+      <a href="/products/new" class='products-index-header-btn'>料理登録</a>
+      <a href="/materials" class='products-index-header-btn'>食材一覧</a>
+      <a href="/" class='products-index-header-btn'>献立一覧</a>
+      <a href="/orders/show_summary" class='products-index-header-btn'>買い物リスト</a>
+    </div>
   </div>
 </div>
-<div class='products-diplay'>
+<div class='products-display'>
   <%= render 'shared/products_display' %>
 </div>

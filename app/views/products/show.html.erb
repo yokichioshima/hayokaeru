@@ -10,16 +10,15 @@
   <div class='product-name-wrapper'>
     <%= @product.name %>
   </div>
-  <%= link_to '料理情報を編集する', edit_product_path(@product.id), class:'get-edit-page-btn' %>
-  <%= link_to '削除する', product_path(@product.id), method: :delete, data: { confirm: '削除しますか？' }, class:'destroy-product-data-btn' %>
   <div class='product-sort-name-wrapper'>
     <%= @product.sort.name %>
   </div>
-
   <div class='material-names-label-text'>食材</div>
   <div class='product-materials-names-wrapper'>
     <% @product.materials.each do |material| %>
       <%= material.name %>
     <% end %>
   </div>
+  <%= link_to '編集する', edit_product_path(@product.id), class:'get-edit-page-btn' %>
+  <%= link_to '削除する', product_path(@product.id), method: :delete, data: { confirm: '削除しますか？' }, class:'destroy-product-data-btn' %>
 </div>

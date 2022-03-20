@@ -1,3 +1,10 @@
+.products-index-header {
+  height: 100px;
+  position: fixed;
+  top: 0;
+  z-index: 500;
+}
+
 .catch-copy {
   color: #ff570d;
   background-color: papayawhip;
@@ -5,7 +12,7 @@
   padding: 0 20px;
 }
 
-.index-header {
+.products-index-header-main {
   background-color: yellowgreen;
   height: calc(100px - 20px);
   width: 100vw; 
@@ -15,22 +22,20 @@
   padding: 0 20px;
 }
 
-.index-page-title {
+.products-index-page-title {
   font-size: 18px;
   display: inline-block;
   border-bottom: 5px solid papayawhip;
   padding:10px;
 }
 
-.index-header-btns {
+.products-index-header-btns-wrapper {
   width: 310px;
   display: flex;
-  color: white;
-  font-size: 16px;
   margin: 0 0 0 auto;
 }
 
-.index-header-btn {
+.products-index-header-btn {
   color: white;
   font-size: 16px;
   text-decoration: none;
@@ -45,8 +50,10 @@
   background-color: transparent;
   height: calc(100vh - 100px);
   width: 100vw;
-  padding: 46px 20px 10px;
+  padding: 10px 20px;
+  margin-top: 100px;
   overflow: scroll;
+  z-index: 0;
 }
 
 .sort-name {
