@@ -20,7 +20,7 @@
   font-size: 16px;
   text-decoration: none;
   margin-left: 30px;
-  padding: 0 20px;
+  padding: 0 10px;
   border: 1px solid papayawhip;
   border-radius: 5px;
 }
@@ -45,6 +45,35 @@
   margin-bottom: 10px;
 }
 
+.product-sort-name-wrapper {
+  color: black;
+  font-size: 20px;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.material-names-label-text {
+  color: black;
+  font-size: 18px;
+  margin-left: 10vw;
+}
+
+.product-materials-names-wrapper {
+  color: black;
+  font-size: 20px;
+  width: 70vw;
+  text-align: center;
+  border: 1px solid;
+  border-radius: 5px;
+  padding: 20px;
+  margin: 0 auto;
+}
+
+.manipulate-products-btns {
+  margin-top: 20px;
+  text-align: center;
+}
+
 .get-edit-page-btn {
   background-color: #ff9933;
   color:white;
@@ -53,8 +82,6 @@
   width: 100px;
   text-decoration: none;
   border-radius: 5px;
-  margin-right: 10px;
-  margin-left: 30vw;
   padding: 10px 20px;
 }
 
@@ -67,29 +94,4 @@
   text-decoration: none;
   border-radius: 5px;
   padding: 10px 20px;
-}
-
-
-.product-sort-name-wrapper {
-  color: black;
-  font-size: 20px;
-  margin-top: 10px;
-  text-align: center;
-}
-
-.material-names-label-text {
-  color: black;
-  font-size: 18px;
-  margin-left: 5vw;
-}
-
-.product-materials-names-wrapper {
-  color: black;
-  font-size: 20px;
-  width: 600px;
-  text-align: center;
-  border: 1px solid;
-  border-radius: 5px;
-  padding: 20px;
-  margin: 0 auto;
 }

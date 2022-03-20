@@ -94,8 +94,9 @@
 
 
 /* 料理一覧*/
-.materials-all {
+.products-all {
   width: calc(100vw - 30vw);
+  margin-left: 280px;
 }
 
 .guid-header {
@@ -103,14 +104,15 @@
   padding: 0 10px;
 }
 
-.materials-display {
+.products-display {
   background-color: transparent;
   height: calc(100vh - 20px);
-  padding: 46px 10px 10px;
+  padding: 10px 20px;
   overflow: scroll;
+  z-index: 0;
 }
 
-.category-name {
+.sort-name {
   font-size: 16px;
   text-align: left;
   border-top: 1px dotted lightslategray;

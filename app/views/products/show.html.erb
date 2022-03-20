@@ -2,7 +2,7 @@
   <div class='show-page-title'>
     料理の詳細
   </div>
-  <a href="/products" class='show-header-btn'>料理一覧へ戻る</a>
+  <a href="/products" class='show-header-btn'>料理一覧<br>へ戻る</a>
 </div>
 
 <div class='show-information-wrapper'>
@@ -19,6 +19,8 @@
       <%= material.name %>
     <% end %>
   </div>
-  <%= link_to '編集する', edit_product_path(@product.id), class:'get-edit-page-btn' %>
-  <%= link_to '削除する', product_path(@product.id), method: :delete, data: { confirm: '削除しますか？' }, class:'destroy-product-data-btn' %>
+  <div class='manipulate-products-btns'>
+    <%= link_to '編集する', edit_product_path(@product.id), class:'get-edit-page-btn' %>
+    <%= link_to '削除する', product_path(@product.id), method: :delete, data: { confirm: '削除しますか？' }, class:'destroy-product-data-btn' %>
+  </div>
 </div>
