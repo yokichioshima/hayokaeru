@@ -1,16 +1,18 @@
 <div class='catch-copy'>
 </div>
-<div class='order-tally-header'>
-  <div class='order-tally-title'>
+<div class='orders-show-summary-header'>
+  <div class='orders-show-summary-title'>
     買い物リスト
   </div>
-  <div class='order-tally-header-btns-wrapper'>    
-    <%= link_to '献立一覧', orders_path, class: 'order-tally-header-btn' %>    
-    <%= link_to '料理一覧', products_path, class: 'order-tally-header-btn' %>
-    <%= link_to '食材一覧', materials_path, class: 'order-tally-header-btn' %>
+  <input type='number' class='input-number-of-people' id='input-number-of-people'>
+  <div class='follow-text'>人分</div>
+  <div class='orders-show-summary-header-btns-wrapper'>    
+    <%= link_to '献立一覧', orders_path, class: 'orders-show-summary-header-btn' %>    
+    <%= link_to '料理一覧', products_path, class: 'orders-show-summary-header-btn' %>
+    <%= link_to '食材一覧', materials_path, class: 'orders-show-summary-header-btn' %>
   </div>
 </div>
-<div class='order-tally-info-wrapper'>
+<div class='orders-show-summary-info-wrapper'>
   <% materials_quantities = collect_materials(@orders) %>
   <% materials = materials_quantities[0] %>
   <% quantities = materials_quantities[1] %>
