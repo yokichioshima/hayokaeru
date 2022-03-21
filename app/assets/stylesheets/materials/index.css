@@ -51,7 +51,7 @@
   height: calc(100vh - 100px);
   width: 100vw;
   padding: 10px 20px;
-  margin-top: 60px;
+  margin-top: 80px;
   overflow: scroll;
   z-index: 0;
 }
