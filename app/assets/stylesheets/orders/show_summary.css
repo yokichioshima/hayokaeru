@@ -1,3 +1,11 @@
+.orders-show-summary-header {
+  height: 100px;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  z-index: 500;
+}
+
 .catch-copy {
   color: #ff570d;
   background-color: papayawhip;
@@ -5,7 +13,7 @@
   padding: 0 20px;
 }
 
-.orders-show-summary-header {
+.orders-show-summary-header-main {
   background-color: #c3d825;
   height: calc(100px - 20px);
   padding: 0 20px;
@@ -46,10 +54,25 @@
   border-radius: 5px;
 }
 
-.order-show-summary-info-wrapper {
+.orders-show-summary-info-wrapper {
   background-color: transparent;
   height: calc(100vh - 100px);
   width: 100vw;
-  padding:  0 20px 20px;
+  padding:  20px 10px;
+  margin-top: 80px;
   overflow: scroll;
+  z-index: 0;
+}
+
+.material-name-and-quantity-wrapper {
+  display: flex;
+  justify-content: space-around;
+}
+
+.material-quantity {
+  width: 40%; 
+}
+
+.show-summary-quantity-unit {
+  width: 10%;
 }
