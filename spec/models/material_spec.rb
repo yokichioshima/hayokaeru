@@ -20,22 +20,22 @@ RSpec.describe Material, type: :model do
       it '名前が空では保存できない' do
         @material.name = ''
         @material.valid?
-        expect(@material.errors.full_messages).to include("食材名を入力してください")
+        expect(@material.errors.full_messages).to include('食材名を入力してください')
       end
       it '画像がなければ保存できない' do
         @material.image = nil
         @material.valid?
-        expect(@material.errors.full_messages).to include("食材画像を入力してください")
+        expect(@material.errors.full_messages).to include('食材画像を入力してください')
       end
       it '基礎食品群が -- では保存できない' do
         @material.category_id = 1
         @material.valid?
-        expect(@material.errors.full_messages).to include("基礎食品群を入力してください")
+        expect(@material.errors.full_messages).to include('基礎食品群を入力してください')
       end
       it '分量の単位が空では保存できない' do
         @material.quantity_unit = ''
         @material.valid?
-        expect(@material.errors.full_messages).to include("分量の単位を入力してください")
+        expect(@material.errors.full_messages).to include('分量の単位を入力してください')
       end
     end
   end

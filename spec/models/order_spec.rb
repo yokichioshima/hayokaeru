@@ -15,7 +15,7 @@ RSpec.describe Order, type: :model do
       it '献立名が空では登録できない' do
         @order.name = ''
         @order.valid?
-        expect(@order.errors.full_messages).to include("献立の名前を入力してください")
+        expect(@order.errors.full_messages).to include('献立の名前を入力してください')
       end
     end
   end

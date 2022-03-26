@@ -19,17 +19,17 @@ RSpec.describe Product, type: :model do
       it '料理画像がなければ登録できない' do
         @product.image = nil
         @product.valid?
-        expect(@product.errors.full_messages).to include("料理画像を入力してください")
+        expect(@product.errors.full_messages).to include('料理画像を入力してください')
       end
       it '料理名が空では登録できない' do
         @product.name = ''
         @product.valid?
-        expect(@product.errors.full_messages).to include("料理名を入力してください")
+        expect(@product.errors.full_messages).to include('料理名を入力してください')
       end
       it '分類が -- では登録できない' do
         @product.sort_id = 1
         @product.valid?
-        expect(@product.errors.full_messages).to include("分類を入力してください")
+        expect(@product.errors.full_messages).to include('分類を入力してください')
       end
     end
   end
