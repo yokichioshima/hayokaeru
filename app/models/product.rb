@@ -1,14 +1,14 @@
 class Product < ApplicationRecord
-  extend ActiveHash::Associations::ActiveRecordExtensions
-  belongs_to :sort
+    extend ActiveHash::Associations::ActiveRecordExtensions
+    belongs_to :sort
 
-  validates :image, presence: true
-  validates :name, presence: true
-  validates :sort_id, numericality: { other_than: 1, message: 'を入力してください' }
+    validates :image, presence: true
+    validates :name, presence: true
+    validates :sort_id, numericality: { other_than: 1, message: 'を入力してください' }
 
-  has_one_attached :image
-  has_many :product_materials, dependent: :destroy
-  has_many :materials, through: :product_materials
-  has_many :order_products, dependent: :destroy
-  has_many :orders, through: :order_products
+    has_one_attached :image
+    has_many :product_materials, dependent: :destroy
+    has_many :materials, through: :product_materials
+    has_many :order_products, dependent: :destroy
+    has_many :orders, through: :order_products
 end
