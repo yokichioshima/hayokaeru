@@ -1,4 +1,4 @@
-  <% for i in 2..9 do %>
+  <% for i in 2..Category.data.size do %>
     <div class='category-name'><%= Category.data[i - 1][:name] %></div>
     <div class='materials-wrapper'>
       <% @materials.where(category_id: i).each do |material| %>
