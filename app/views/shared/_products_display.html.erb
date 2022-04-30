@@ -1,4 +1,4 @@
-  <% for i in 2..6 do %>
+  <% for i in 2..Sort.data.size do %>
     <div class='sort-name'><%= Sort.data[i - 1][:name] %></div>
     <div class='products-wrapper'>
       <% @products.where(sort_id: i).each do |product| %>
